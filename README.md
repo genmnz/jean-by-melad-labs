@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://jeanslabs.vercel.app/brand/jane-180.png" alt="Jean" width="96" height="96" />
+<img src="assets/logo.png" alt="Jean" width="96" height="96" />
 
 # Jean by Melad Labs
 

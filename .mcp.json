@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "jean": {
+      "url": "https://jeanslabs.vercel.app/mcp"
+    }
+  }
+}
