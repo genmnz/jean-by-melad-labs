@@ -4,7 +4,7 @@
 
 # Jean by Melad Labs
 
-### Scientific computing for the life sciences, callable by any AI assistant
+### The bioinformatics & biotech suite, callable by any AI assistant
 
 **<!-- COUNT:START -->279<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
@@ -27,7 +27,7 @@
 > answers from memory: fluently, confidently, and sometimes wrong. A wrong primer costs a week.
 > A wrong conclusion costs a paper.
 
-**Jean is a scientific computing environment for the life sciences, and this is its door for AI.**
+**Jean is a bioinformatics and biotech suite (scientific computing for the life sciences), and this is its door for AI.**
 One engine, validated against the reference implementations of each field, served over the
 [Model Context Protocol](https://modelcontextprotocol.io). Connect it once, and Claude, ChatGPT, Cursor,
 VS Code or any MCP client can *compute* the answer instead of guessing it, across the whole arc of an
