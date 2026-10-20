@@ -8,9 +8,7 @@
 
 **<!-- COUNT:START -->279<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
-**Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the clone you got
-
-Cloning · primers · CRISPR · Sanger & NGS reads · qPCR & ddPCR · phylogenetics · variants & copy number · expression · proteomics & mass spec · antibodies · structures · cheminformatics
+**Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
 [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-io.github.genmnz%2Fjean-0b7285)](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.genmnz/jean)
 ![Transport](https://img.shields.io/badge/transport-Streamable%20HTTP-2b8a3e)
@@ -18,55 +16,51 @@ Cloning · primers · CRISPR · Sanger & NGS reads · qPCR & ddPCR · phylogenet
 ![Price](https://img.shields.io/badge/price-free-e8590c)
 [![Docs](https://img.shields.io/badge/docs-jeanslabs.vercel.app-1971c2)](https://jeanslabs.vercel.app/docs/api/mcp)
 
-**[Connect](#-connect-in-thirty-seconds) · [What it does](#-what-you-can-ask) · [All tools](#-every-tool) · [Why trust it](#-why-scientists-trust-the-numbers) · [FAQ](#-faq)**
+[Connect](#-connect-in-thirty-seconds) · [How it works](#-how-it-works) · [What to ask](#-what-you-can-ask) · [Every tool](#-every-tool) · [FAQ](#-faq)
 
 </div>
 
 ---
 
 > **Your assistant is brilliant at reasoning and unreliable at science it has to compute.**
-> Ask it for a melting temperature, a Gibson overlap, a ΔΔCq, a phylogeny or a peptide mass and it
-> answers from memory, confidently, and sometimes wrong. A wrong primer costs a week. A wrong
-> conclusion costs a paper.
+> Ask it for a melting temperature, a Gibson overlap, a ΔΔCq, a phylogeny or a peptide mass, and it
+> answers from memory: fluently, confidently, and sometimes wrong. A wrong primer costs a week.
+> A wrong conclusion costs a paper.
 
 **Jean is a scientific computing environment for the life sciences, and this is its door for AI.**
-One engine, validated against the reference implementations of each field, reached over the
-[Model Context Protocol](https://modelcontextprotocol.io): connect it once, and Claude, ChatGPT, Cursor,
-VS Code or any MCP client can *compute* the answer instead of guessing it, across the whole arc of
-an experiment:
+One engine, validated against the reference implementations of each field, served over the
+[Model Context Protocol](https://modelcontextprotocol.io). Connect it once, and Claude, ChatGPT, Cursor,
+VS Code or any MCP client can *compute* the answer instead of guessing it, across the whole arc of an
+experiment:
 
 | | |
 |---|---|
-| 🧬 **Design** | Constructs and assemblies, every primer and oligo, CRISPR guides, codon-optimised genes, RBS and operons, probes, barcodes, genetic circuits, variant libraries |
+| 🧬 **Design** | Constructs and assemblies, every primer and oligo, CRISPR guides, codon-optimized genes, RBS sites and operons, in-situ probes, barcodes, genetic circuits, variant libraries |
 | 🧪 **Simulate** | Digests and gels, PCR products, multiplex screens, Gibson, Golden Gate and Gateway reactions, run on paper before they are run at the bench |
-| 📊 **Analyze** | Sanger traces and NGS reads, qPCR and ddPCR runs, variants and copy number, expression and enrichment, trees, mass-spec proteomics, antibodies, structures and small molecules |
-| ✅ **Verify** | Prove the clone you got is the construct you drew, screen for contamination, recover how a construct was made |
-
-The model plans the experiment; Jean does the science. Every result carries the model, the
-parameters, the inputs and the uncertainty that produced it, so you can check a number rather than
-trust it.
+| 📊 **Analyze** | Sanger traces and NGS reads, qPCR and ddPCR runs, variants and copy number, expression and enrichment, phylogenies, mass-spec proteomics, antibodies, structures and small molecules |
+| ✅ **Verify** | Prove the clone you got is the construct you drew, screen for vector contamination, recover how a construct was made |
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-### 🎯 Calculated, not recalled
-Thermodynamics, enzyme specificity, alignment scores and statistics are computed, every time, by
+#### 🎯 Calculated, not recalled
+Thermodynamics, enzyme specificity, alignment scores and statistics are computed on every call, by
 engines checked against the reference tools the field already relies on.
 
 </td>
 <td width="33%" valign="top">
 
-### 🔍 Explained, not asserted
-Each answer carries its derivation: the model used, the parameters, what would undermine it.
-A reviewer can reproduce every figure.
+#### 🔍 Explained, not asserted
+Each answer carries its derivation: the method, the parameters, the inputs, and what would undermine
+it. A reviewer can reproduce every number.
 
 </td>
 <td width="33%" valign="top">
 
-### 🔒 Private, not stored
-The server is stateless. Nothing you send is kept, and nothing is carried between calls.
-No account, no tracking, no key.
+#### 🔒 Private, not stored
+The server is stateless: nothing you send is kept or carried between calls. No account, no key, no
+tracking.
 
 </td>
 </tr>
@@ -74,81 +68,91 @@ No account, no tracking, no key.
 
 ## ⚡ Connect in thirty seconds
 
-| | |
+| Setting | Value |
 |---|---|
 | **Server URL** | `https://jeanslabs.vercel.app/mcp` |
 | **Transport** | Streamable HTTP |
 | **Authentication** | None |
 | **Cost** | Free |
 
-**Claude** (claude.ai, Desktop, Code): [**➕ Add Jean as a connector**](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Jean&connectorUrl=https%3A%2F%2Fjeanslabs.vercel.app%2Fmcp). The dialog opens prefilled.
+**Claude** (claude.ai, Desktop): [**➕ Add Jean as a connector**](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Jean&connectorUrl=https%3A%2F%2Fjeanslabs.vercel.app%2Fmcp). The dialog opens prefilled.
 
-**Cursor**, `~/.cursor/mcp.json`:
+**Claude Code**:
+
+```bash
+claude mcp add --transport http jean https://jeanslabs.vercel.app/mcp
+```
+
+**Cursor**, in `~/.cursor/mcp.json`:
 
 ```json
 { "mcpServers": { "jean": { "url": "https://jeanslabs.vercel.app/mcp" } } }
 ```
 
-**VS Code**, `.vscode/mcp.json`:
+**VS Code**, in `.vscode/mcp.json`:
 
 ```json
 { "servers": { "jean": { "type": "http", "url": "https://jeanslabs.vercel.app/mcp" } } }
 ```
 
-**Anything else that speaks MCP:** add a remote server with the URL above.
-Field-by-field help for every connector dialog: [jeanslabs.vercel.app/docs/api/mcp](https://jeanslabs.vercel.app/docs/api/mcp).
+**Any other MCP client:** add a remote server with the URL above. Field-by-field help for every
+connector dialog is at [jeanslabs.vercel.app/docs/api/mcp](https://jeanslabs.vercel.app/docs/api/mcp).
+
+## 🔁 How it works
+
+```mermaid
+sequenceDiagram
+    participant You
+    participant Assistant as Your AI assistant
+    participant Jean
+    participant DB as Public databases (NCBI, EMBL-EBI, UCSC, UniProt)
+    You->>Assistant: Clone GFP into pET-28a with NdeI and XhoI
+    Assistant->>Jean: fetch the vector record
+    Jean->>DB: query by accession
+    DB-->>Jean: GenBank record
+    Assistant->>Jean: design primers, simulate PCR and digest
+    Jean-->>Assistant: primers, Tm values, product map, method and parameters
+    Assistant-->>You: a plan you can check, number by number
+```
+
+The assistant decides *what* to do; every number comes from Jean. Results are structured data that
+match a declared schema, and anything visual (a plasmid map, a gel, a trace, a tree, a plot) comes
+back as both SVG and PNG. Workflow tools chain steps into a reproducible pipeline that runs in one call.
 
 ## 💬 What you can ask
 
-**For the cloning bench**
-> *"I need to put GFP into pET-28a between NdeI and XhoI. Design the primers, check both enzymes cut the vector once, and show me the final map."*
->
-> *"Plan a four-part Gibson assembly of these fragments and give me the overlaps and their Tm."*
->
-> *"Will these Golden Gate overhangs ligate faithfully, or should I redesign them?"*
+| Field | Try asking |
+|---|---|
+| **Cloning** | *"Put GFP into pET-28a between NdeI and XhoI. Design the primers, check both enzymes cut the vector once, and show me the final map."* |
+| **Assembly** | *"Plan a four-part Gibson assembly of these fragments and give me the overlaps and their Tm."* · *"Will these Golden Gate overhangs ligate faithfully?"* |
+| **Sequencing** | *"Here are three Sanger reads of my clone. Is the insert correct, base for base?"* |
+| **Genome editing** | *"Design guides against exon 2 of this gene and rank them by predicted efficiency and off-target risk."* · *"Quantify the indels in this edited trace against the control."* |
+| **qPCR & dPCR** | *"Fit these amplification curves and give me ΔΔCq against GAPDH, with uncertainty."* |
+| **Genomics** | *"Read this VCF and give me allele frequencies and Fst per population."* · *"Run gene-set enrichment on my differentially expressed genes."* |
+| **Proteins** | *"Which proteins do these peptide-spectrum matches support?"* · *"Number this antibody, type the chain, and list its sequence liabilities."* |
+| **Chemistry** | *"Cluster these compounds, show me the scaffolds, and flag activity cliffs."* |
+| **Evolution** | *"Align these sequences, pick the best substitution model, build a maximum-likelihood tree with support, and draw it."* |
 
-**For the sequencing core**
-> *"Here are three Sanger reads of my clone. Is the insert correct, base for base?"*
->
-> *"Quantify the indels in this CRISPR-edited trace against the control."*
-
-**For qPCR and dPCR**
-> *"Fit these amplification curves, give me Cq values and ΔΔCq against GAPDH, with uncertainty."*
-
-**For genome editing**
-> *"Design guides against exon 2 of this gene and rank them by predicted efficiency and off-target risk."*
-
-**For proteomics and antibody work**
-> *"Which proteins do these peptide-spectrum matches support? And for this antibody: number it, type the chain, and list its sequence liabilities."*
-
-**For genomics and expression**
-> *"Read this VCF, give me allele frequencies per population, then run gene-set enrichment on my differentially expressed genes."*
-
-**For chemistry**
-> *"Cluster these compounds, show me the scaffolds, and flag activity cliffs."*
-
-**For evolution and comparative genomics**
-> *"Align these sequences, pick the best substitution model, build a maximum-likelihood tree with support, and draw it."*
-
-**A small honesty test:** ask for EcoRI sites on the circular sequence `AATTCTTAGGATCCG`. The only site
-spans the point where the circle closes, so an answer that treats the sequence as a straight line finds
-nothing. Jean finds it.
+> **A thirty-second honesty test.** Ask for EcoRI sites on the circular sequence `AATTCTTAGGATCCG`.
+> The only site spans the point where the circle closes, so an answer that treats the sequence as a
+> straight line finds nothing. Jean finds it. Ask for an enzyme that does not exist, and Jean says so
+> by name instead of returning an empty list that reads as "no sites".
 
 ## 👩‍🔬 Built for
 
 | You are | Jean gives your assistant |
 |---|---|
-| **A wet-lab biologist** | Primer design, digests, assemblies and verification you can order from with confidence |
+| **A wet-lab biologist** | Primers, digests, assemblies and verification you can order from with confidence |
 | **A synthetic biologist** | Golden Gate and MoClo grammars, overhang fidelity, RBS and operon design, genetic circuits |
-| **A core facility** | Trace QC, construct verification, qPCR and ddPCR analysis that explains itself |
-| **A computational biologist** | Alignment, phylogenetics, variants, copy number, expression and enrichment, callable in one line |
+| **A core facility** | Trace QC, construct verification, and qPCR and ddPCR analysis that explains itself |
+| **A computational biologist** | Alignment, phylogenetics, variants, copy number, expression and enrichment in one call |
 | **A proteomics or antibody scientist** | Peptide and protein inference, isotope envelopes, antibody numbering, chain typing and liabilities |
 | **A medicinal chemist** | Conformers, tautomers, scaffolds, R-groups, matched pairs, chemical space and library screening |
 | **A builder of AI scientists** | A tested, schema-typed scientific tool layer your agent can call instead of writing scripts |
 
 ## 🧰 Every tool
 
-The full catalogue, generated automatically from the live server every day. Click a section to open it.
+The full catalogue, regenerated from the live server every day. Open a section to see its tools.
 
 <!-- TOOLS:START -->
 <details>
@@ -572,53 +576,41 @@ _Chain tools into reproducible workflows, export records, keep lab notes._
 
 <!-- TOOLS:END -->
 
-Every tool returns structured data that matches a declared schema. Where a result is a picture
-(a plasmid map, a gel, a trace, a tree, a structure, a plot) you get it as both SVG and PNG. Workflow tools chain
-any of the above into a reproducible pipeline that runs in a single call.
-
-## ✅ Why scientists trust the numbers
-
-- **Checked, not guessed.** Each engine is tested against the reference implementations the field
-  already relies on, on their own data, before it ships.
-- **Explained.** Results carry the model, parameters and inputs behind them, and say what would
-  undermine the conclusion.
-- **Honest refusals.** Ask for an enzyme that does not exist and Jean says so by name, instead of
-  returning an empty list that reads as "no sites".
-- **Circular-aware.** Plasmids are circles. Sites, primers and fragments that span the origin are
-  handled as such.
-
 ## ❓ FAQ
 
 **Do I need an account or an API key?** No. Add the URL and go.
 
-**Is my sequence stored?** No. The server is stateless and keeps nothing between calls. A few tools
-query public databases (NCBI, EMBL-EBI, UCSC, UniProt) with exactly the query you asked for.
+**Is my data stored?** No. The server is stateless and keeps nothing between calls. A few tools query
+public databases (NCBI, EMBL-EBI, UCSC, UniProt) with exactly the query you asked for.
 
-**Which assistants work?** Any MCP client: Claude, ChatGPT, Cursor, VS Code, Windsurf,
+**Which assistants work?** Any MCP client: Claude, Claude Code, ChatGPT, Cursor, VS Code, Windsurf,
 Cline, and agent frameworks that speak MCP.
 
-**Is there a user interface too?** Yes. The same engine runs in your browser at
-[**jeanslabs.vercel.app**](https://jeanslabs.vercel.app): a plasmid and sequence editor with cloning
-simulation, primer design, gel and Sanger views. Free, no account.
+**How do I know a result is right?** Every result names the method, parameters and inputs behind it,
+and each engine is tested against the reference implementation of its field before it ships. If you
+find a wrong answer, [open an issue](https://github.com/genmnz/jean-by-melad-labs/issues): wrong answers
+are treated as bugs.
 
-**Found a wrong answer, or want a tool?** [Open an issue](https://github.com/genmnz/jean-by-melad-labs/issues).
-Wrong answers are treated as bugs.
+**Is there a visual interface?** Yes. The same engine runs in your browser at
+[jeanslabs.vercel.app](https://jeanslabs.vercel.app): a plasmid and sequence editor with cloning
+simulation, primer design, gel and Sanger views. Free, no account.
 
 ## About
 
-Jean (said like *gene*) is proprietary software by **Melad Labs** (© Melad Labs, all rights reserved),
-offered as the hosted service above. This repository is its public listing and holds no source code.
-The registry entry `io.github.genmnz/jean` and this catalogue are kept current automatically.
+**Jean** (said like *gene*) is proprietary software by **Melad Labs**, © Melad Labs, all rights
+reserved, offered as the hosted service above. This repository is its public listing and holds no
+source code. The registry entry `io.github.genmnz/jean` and the catalogue above are kept current
+automatically.
 
-<sub>**Keywords:** MCP server · scientific computing · life sciences computing · lab software · Model Context Protocol · remote MCP · bioinformatics · molecular biology ·
-computational biology · life sciences · genomics · synthetic biology · DNA · RNA · protein · plasmid ·
-plasmid map · vector design · cloning · molecular cloning · in silico cloning · restriction enzyme ·
-restriction digest · ligation · Gibson assembly · Golden Gate · MoClo · recombination cloning ·
-site-directed mutagenesis · PCR · primer design · qPCR · RT-qPCR · ΔΔCq · digital PCR · ddPCR · melting
-temperature · Tm calculator · LAMP · bisulfite sequencing · degenerate primers · CRISPR · Cas9 · sgRNA ·
-guide RNA design · off-target · base editing · genome editing · Sanger sequencing · chromatogram ·
-sequence alignment · multiple sequence alignment · MSA · phylogenetics · phylogenetic tree · maximum
-likelihood · copy number variation · variant calling · gene set enrichment · differential expression ·
-protein domains · proteomics · mass spectrometry · peptide identification · antibody numbering · structural biology · population genetics · Hardy-Weinberg · Fst · cheminformatics · drug discovery · scaffold analysis · codon optimization · back-translation ·
-RBS design · genetic circuits · DNA barcodes · GenBank · FASTA · RDML · NCBI · EMBL-EBI · UCSC · UniProt ·
-AI for science · AI scientist · lab copilot · Claude connector · ChatGPT app · Cursor · VS Code · LLM tools</sub>
+<sub>**Keywords:** MCP server · Model Context Protocol · remote MCP · scientific computing · life sciences ·
+bioinformatics · computational biology · molecular biology · synthetic biology · genomics · lab software ·
+DNA · RNA · protein · plasmid · plasmid map · vector design · molecular cloning · in silico cloning ·
+restriction digest · ligation · Gibson assembly · Golden Gate · MoClo · Gateway cloning · site-directed
+mutagenesis · PCR · primer design · melting temperature · Tm calculator · qPCR · RT-qPCR · ΔΔCq ·
+digital PCR · ddPCR · LAMP · bisulfite sequencing · degenerate primers · CRISPR · Cas9 · sgRNA design ·
+off-target · base editing · Sanger sequencing · chromatogram · NGS · sequence alignment · MSA ·
+phylogenetics · maximum likelihood · variant calling · VCF · copy number · population genetics · Fst ·
+differential expression · gene set enrichment · proteomics · mass spectrometry · antibody numbering ·
+structural biology · cheminformatics · drug discovery · codon optimization · RBS design · genetic
+circuits · DNA barcodes · GenBank · FASTA · RDML · NCBI · EMBL-EBI · UCSC · UniProt · AI for science ·
+AI scientist · lab copilot · Claude connector · ChatGPT app · Cursor · VS Code</sub>
