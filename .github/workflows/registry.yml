@@ -1,0 +1,57 @@
+# Keeps io.github.genmnz/jean in the official MCP Registry current, with no copy of the listing here:
+# every field a person reads is taken from the live server's `initialize` handshake, whose serverInfo
+# is generated from the engine repository's server.json. Only the registry name and the endpoint are
+# fixed below. A version, once published, can never be deleted or reused, so an already-published
+# version is skipped, and the server must report a NEW version for anything to be published.
+name: Sync MCP Registry listing
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+env:
+  NAME: io.github.genmnz/jean
+  ENDPOINT: https://jeanslabs.vercel.app/mcp
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # GitHub OIDC proves ownership of the io.github.genmnz namespace; no secret
+      contents: read
+    steps:
+      - name: Read the live server's identity
+        run: |
+          curl -fsS -X POST "$ENDPOINT" \
+            -H 'content-type: application/json' \
+            -H 'accept: application/json, text/event-stream' \
+            -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"registry-sync","version":"1"}}}' \
+            | sed -n 's/^data: //p' | head -1 | jq -e '.result.serverInfo' > info.json
+          cat info.json
+
+      - name: Build server.json from it
+        run: |
+          jq --arg name "$NAME" --arg url "$ENDPOINT" '{
+            "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+            name: $name, title, description, version, websiteUrl, icons,
+            remotes: [{type: "streamable-http", url: $url}]
+          }' info.json > server.json
+          cat server.json
+
+      - name: Skip a version the registry already has
+        id: check
+        run: |
+          VERSION=$(jq -r .version server.json)
+          if curl -fsS "https://registry.modelcontextprotocol.io/v0.1/servers?search=${NAME}" \
+               | jq -e --arg n "$NAME" --arg v "$VERSION" '.servers[]? | select(.server.name == $n and .server.version == $v)' > /dev/null; then
+            echo "${NAME}@${VERSION} is already published."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
