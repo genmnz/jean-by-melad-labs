@@ -4,11 +4,13 @@
 
 # Jean by Melad Labs
 
-### The molecular biology bench for AI assistants
+### Scientific computing for the life sciences, callable by any AI assistant
 
 **<!-- COUNT:START -->279<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
-Cloning · PCR & primers · CRISPR · Sanger · qPCR & dPCR · alignment & phylogenetics · genomics · proteins · cheminformatics
+**Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the clone you got
+
+Cloning · primers · CRISPR · Sanger & NGS reads · qPCR & ddPCR · phylogenetics · variants & copy number · expression · proteomics & mass spec · antibodies · structures · cheminformatics
 
 [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-io.github.genmnz%2Fjean-0b7285)](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.genmnz/jean)
 ![Transport](https://img.shields.io/badge/transport-Streamable%20HTTP-2b8a3e)
@@ -22,15 +24,27 @@ Cloning · PCR & primers · CRISPR · Sanger · qPCR & dPCR · alignment & phylo
 
 ---
 
-> **Your assistant is brilliant at reasoning and terrible at arithmetic on DNA.**
-> Ask it for a melting temperature, a restriction map or a Gibson overlap and it answers from
-> memory, confidently, and sometimes wrong. A wrong primer costs a week. A wrong assembly costs a month.
+> **Your assistant is brilliant at reasoning and unreliable at science it has to compute.**
+> Ask it for a melting temperature, a Gibson overlap, a ΔΔCq, a phylogeny or a peptide mass and it
+> answers from memory, confidently, and sometimes wrong. A wrong primer costs a week. A wrong
+> conclusion costs a paper.
 
-**Jean gives the model a real bench.** It is a remote [Model Context Protocol](https://modelcontextprotocol.io)
-server: connect it once, and Claude, ChatGPT, Cursor, VS Code or any MCP client can *compute* the
-answer instead of guessing it. The model plans the experiment; Jean does the science. Every result
-comes back with the method, parameters and inputs that produced it, so you can check a number
-rather than trust it.
+**Jean is a scientific computing environment for the life sciences, and this is its door for AI.**
+One engine, validated against the reference implementations of each field, reached over the
+[Model Context Protocol](https://modelcontextprotocol.io): connect it once, and Claude, ChatGPT, Cursor,
+VS Code or any MCP client can *compute* the answer instead of guessing it, across the whole arc of
+an experiment:
+
+| | |
+|---|---|
+| 🧬 **Design** | Constructs and assemblies, every primer and oligo, CRISPR guides, codon-optimised genes, RBS and operons, probes, barcodes, genetic circuits, variant libraries |
+| 🧪 **Simulate** | Digests and gels, PCR products, multiplex screens, Gibson, Golden Gate and Gateway reactions, run on paper before they are run at the bench |
+| 📊 **Analyze** | Sanger traces and NGS reads, qPCR and ddPCR runs, variants and copy number, expression and enrichment, trees, mass-spec proteomics, antibodies, structures and small molecules |
+| ✅ **Verify** | Prove the clone you got is the construct you drew, screen for contamination, recover how a construct was made |
+
+The model plans the experiment; Jean does the science. Every result carries the model, the
+parameters, the inputs and the uncertainty that produced it, so you can check a number rather than
+trust it.
 
 <table>
 <tr>
@@ -104,6 +118,15 @@ Field-by-field help for every connector dialog: [jeanslabs.vercel.app/docs/api/m
 **For genome editing**
 > *"Design guides against exon 2 of this gene and rank them by predicted efficiency and off-target risk."*
 
+**For proteomics and antibody work**
+> *"Which proteins do these peptide-spectrum matches support? And for this antibody: number it, type the chain, and list its sequence liabilities."*
+
+**For genomics and expression**
+> *"Read this VCF, give me allele frequencies per population, then run gene-set enrichment on my differentially expressed genes."*
+
+**For chemistry**
+> *"Cluster these compounds, show me the scaffolds, and flag activity cliffs."*
+
 **For evolution and comparative genomics**
 > *"Align these sequences, pick the best substitution model, build a maximum-likelihood tree with support, and draw it."*
 
@@ -118,7 +141,9 @@ nothing. Jean finds it.
 | **A wet-lab biologist** | Primer design, digests, assemblies and verification you can order from with confidence |
 | **A synthetic biologist** | Golden Gate and MoClo grammars, overhang fidelity, RBS and operon design, genetic circuits |
 | **A core facility** | Trace QC, construct verification, qPCR and ddPCR analysis that explains itself |
-| **A computational biologist** | Alignment, phylogenetics, variants, copy number and enrichment, callable in one line |
+| **A computational biologist** | Alignment, phylogenetics, variants, copy number, expression and enrichment, callable in one line |
+| **A proteomics or antibody scientist** | Peptide and protein inference, isotope envelopes, antibody numbering, chain typing and liabilities |
+| **A medicinal chemist** | Conformers, tautomers, scaffolds, R-groups, matched pairs, chemical space and library screening |
 | **A builder of AI scientists** | A tested, schema-typed scientific tool layer your agent can call instead of writing scripts |
 
 ## 🧰 Every tool
@@ -341,7 +366,7 @@ _Pairwise and multiple alignment, dot plots, model selection, trees and tree com
 </details>
 
 <details>
-<summary><b>🧫 Genomics, variants & copy number</b> · 17 tools</summary>
+<summary><b>🧫 Genomics, variants & copy number</b> · 20 tools</summary>
 
 _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 
@@ -361,6 +386,9 @@ _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 | **Copy number somatic** <br><sub>`copy_number_somatic`</sub> | Read an Affymetrix array result's own somatic-mutation calls: one row per mutation probe set with the producer's call, the score behind it and the two thresholds that call was graded against. |
 | **Design expression variants** <br><sub>`design_expression_variants`</sub> | Which codon-optimised variants of this CDS does an expression trial need, and how do they differ? |
 | **Lookup variant** <br><sub>`lookup_variant`</sub> | Look up a variant: ClinVar clinical interpretation, dbSNP records, gnomAD population frequency and gene constraint, CADD deleteriousness, or GWAS/eQTL associations. |
+| **Population ancestry** <br><sub>`population_ancestry`</sub> | What mixture of K ancestral populations does each sample look like, and which K does cross-entropy prefer? |
+| **Population Fst** <br><sub>`population_fst`</sub> | How differentiated are these populations, per site and averaged, with a jackknife standard error? |
+| **Population site stats** <br><sub>`population_site_stats`</sub> | What are this call set's per-site and per-sample genotype statistics, including heterozygosity, F and the exact Hardy-Weinberg test? |
 | **Read variant calls** <br><sub>`read_variant_calls`</sub> | Read a variant call set (VCF, bgzipped VCF or BCF) and return the records matching a query: a locus, a variant class, a QUAL floor, PASS-only, a sample that is not hom-ref, or an INFO key. |
 | **Score variant effect** <br><sub>`score_variant_effect`</sub> | Score protein substitutions with ESM-2, the zero-shot way facebookresearch/esm's own predict.py does: how much less (or more) likely the mutant residue is than the wild type at that site, under a protein language model. |
 | **Variant call summary** <br><sub>`variant_call_summary`</sub> | Summarize a variant call set the way bcftools stats does: records by class, transitions and transversions with their ratio, the twelve directed substitutions, indel lengths, per-contig counts, the FILTER tally, the QU… |
@@ -475,7 +503,7 @@ _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the rec
 </details>
 
 <details>
-<summary><b>📊 Sequence analysis</b> · 38 tools</summary>
+<summary><b>📊 Sequence analysis</b> · 35 tools</summary>
 
 _Everything else a bench scientist asks of a sequence._
 
@@ -501,9 +529,6 @@ _Everything else a bench scientist asks of a sequence._
 | **Mask sequence** <br><sub>`mask_sequence`</sub> | Mask the parts of a sequence a similarity search should not seed on, using BLAST's own three maskers: DUST for compositionally biased DNA (poly-A, simple repeats), SEG for the protein equivalent, and WindowMasker for… |
 | **Match part by sequence** <br><sub>`match_part_by_sequence`</sub> | Identify a stretch of DNA by asking the iGEM Registry which published part carries exactly those bases, and hand back that part's own description, Sequence-Ontology role, literature citation and license. |
 | **MIQE checklist** <br><sub>`miqe_checklist`</sub> | Which MIQE 2.0 items does a qPCR paper provide, and where, or why are they omitted? |
-| **Population ancestry** <br><sub>`population_ancestry`</sub> | What mixture of K ancestral populations does each sample look like, and which K does cross-entropy prefer? |
-| **Population Fst** <br><sub>`population_fst`</sub> | How differentiated are these populations, per site and averaged, with a jackknife standard error? |
-| **Population site stats** <br><sub>`population_site_stats`</sub> | What are this call set's per-site and per-sample genotype statistics, including heterozygosity, F and the exact Hardy-Weinberg test? |
 | **Rank reference genes** <br><sub>`rank_reference_genes`</sub> | Which candidate reference genes are most stable on this plate, by geNorm, NormFinder, BestKeeper, comparative delta-Ct and their consensus? |
 | **Read MGF** <br><sub>`read_mgf`</sub> | What spectra does this MGF file hold? |
 | **Read mzML** <br><sub>`read_mzml`</sub> | What spectra, precursors and acquisition metadata does this mzML run hold? |
@@ -548,7 +573,7 @@ _Chain tools into reproducible workflows, export records, keep lab notes._
 <!-- TOOLS:END -->
 
 Every tool returns structured data that matches a declared schema. Where a result is a picture
-(a plasmid map, a gel, a trace, a tree, a plot) you get it as both SVG and PNG. Workflow tools chain
+(a plasmid map, a gel, a trace, a tree, a structure, a plot) you get it as both SVG and PNG. Workflow tools chain
 any of the above into a reproducible pipeline that runs in a single call.
 
 ## ✅ Why scientists trust the numbers
@@ -585,7 +610,7 @@ Jean (said like *gene*) is proprietary software by **Melad Labs** (© Melad Labs
 offered as the hosted service above. This repository is its public listing and holds no source code.
 The registry entry `io.github.genmnz/jean` and this catalogue are kept current automatically.
 
-<sub>**Keywords:** MCP server · Model Context Protocol · remote MCP · bioinformatics · molecular biology ·
+<sub>**Keywords:** MCP server · scientific computing · life sciences computing · lab software · Model Context Protocol · remote MCP · bioinformatics · molecular biology ·
 computational biology · life sciences · genomics · synthetic biology · DNA · RNA · protein · plasmid ·
 plasmid map · vector design · cloning · molecular cloning · in silico cloning · restriction enzyme ·
 restriction digest · ligation · Gibson assembly · Golden Gate · MoClo · recombination cloning ·
@@ -594,6 +619,6 @@ temperature · Tm calculator · LAMP · bisulfite sequencing · degenerate prime
 guide RNA design · off-target · base editing · genome editing · Sanger sequencing · chromatogram ·
 sequence alignment · multiple sequence alignment · MSA · phylogenetics · phylogenetic tree · maximum
 likelihood · copy number variation · variant calling · gene set enrichment · differential expression ·
-protein domains · proteomics · cheminformatics · codon optimization · back-translation ·
+protein domains · proteomics · mass spectrometry · peptide identification · antibody numbering · structural biology · population genetics · Hardy-Weinberg · Fst · cheminformatics · drug discovery · scaffold analysis · codon optimization · back-translation ·
 RBS design · genetic circuits · DNA barcodes · GenBank · FASTA · RDML · NCBI · EMBL-EBI · UCSC · UniProt ·
 AI for science · AI scientist · lab copilot · Claude connector · ChatGPT app · Cursor · VS Code · LLM tools</sub>

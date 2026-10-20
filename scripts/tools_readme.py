@@ -42,7 +42,7 @@ RULES = [
     ("crispr", r"crispr|guide|sgrna|off_?target|base_edit|indel|tide|screen_"),
     ("qpcr", r"qpcr|cq|melt|rdml|droplet|dpcr|taqman|uncertainty|amplification"),
     ("phylo", r"tree|phylo|align|dot_plot|substitution|msa"),
-    ("variants", r"variant|copy_number|region|cnv|loh|mosaic"),
+    ("variants", r"variant|copy_number|region|cnv|loh|mosaic|population"),
     ("chem", r"molecul|compound|tautomer|conformer|scaffold|reaction|protonation|r_groups|activity_cliff|chemical|structure_library"),
     ("protein", r"protein|domain|motif|residue|peptide|blast_cdd|smart|proteom"),
     ("discovery", r"discover|differential|gene_set|enrichment|hypothes|gene_trait|falsif"),
