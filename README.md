@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->279<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->287<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -162,10 +162,10 @@ _Digests, ligations, Gibson, Golden Gate, Gateway-style recombination, part gram
 
 | Tool | What it answers |
 |---|---|
-| **Assemble index oligos** <br><sub>`assemble_index_oligos`</sub> | Turn index sequences into the oligos a synthesiser makes: each index spliced between 5'/3' adapter arms, or onto a PCR primer in either orientation with an optional spacer. |
+| **Assemble index oligos** <br><sub>`assemble_index_oligos`</sub> | What oligos does a synthesizer make for these indexes on these adapter arms or primer? |
 | **Assemble operon** <br><sub>`assemble_operon`</sub> | What does an operon of these CDSs look like with a fresh RBS in front of each, designed against its real upstream context? |
 | **Assembly plan simulate** <br><sub>`assembly_plan_simulate`</sub> | What final construct does a multi-level assembly plan give, each level's products becoming the next level's parts? |
-| **Build assembly report** <br><sub>`build_assembly_report`</sub> | Build DnaCauldron's assembly report from an assembly result: the per-construct summary table, the constructs and errors spreadsheets as pandas-compatible CSV, and the Outcome / Number of assemblies stats. |
+| **Build assembly report** <br><sub>`build_assembly_report`</sub> | What does DnaCauldron's assembly report say about this assembly result? |
 | **Check Golden Gate parts** <br><sub>`check_golden_gate_parts`</sub> | Which of each part's Type-IIS sites are the flanking sites the assembly needs and which are internal sites that will mis-cut it? |
 | **Check methylation block** <br><sub>`check_methylation_block`</sub> | Does the host's methylation block these enzymes at each of their sites on this molecule? |
 | **Classify grammar part** <br><sub>`classify_grammar_part`</sub> | Which Golden Braid, MoClo or Yeast ToolKit grammar, position and level does this record represent? |
@@ -180,19 +180,19 @@ _Digests, ligations, Gibson, Golden Gate, Gateway-style recombination, part gram
 | **Digest reaction conditions** <br><sub>`digest_reaction_conditions`</sub> | Which buffer, temperature, cofactors and heat inactivation does a digest with these enzymes need, by NEB's own data? |
 | **Domesticate part** <br><sub>`domesticate_part`</sub> | Which silent codon changes remove a part's internal Type-IIS sites without changing its protein? |
 | **Draw gel** <br><sub>`draw_gel`</sub> | Where does each lane's fragments run on an agarose gel against the marker ladder? |
-| **Find assemblies** <br><sub>`find_assemblies`</sub> | Resolve an organism to its published genome assemblies and the chromosomes, plasmids and organelles each one is made of, with every accession and length NCBI reports. |
+| **Find assemblies** <br><sub>`find_assemblies`</sub> | Which published genome assemblies, and which replicons in each, does NCBI hold for this organism? |
 | **Find restriction sites** <br><sub>`find_restriction_sites`</sub> | Where do these enzymes cut this molecule, on which strand, and what end does each cut leave? |
 | **Find star sites** <br><sub>`find_star_sites`</sub> | Where else could these enzymes cut this molecule under star conditions, by REBASE's star-activity list and its one-base rule? |
 | **Gibson assemble** <br><sub>`gibson_assemble`</sub> | What construct do these fragments make when they are joined by their terminal homology (Gibson, NEBuilder, In-Fusion)? |
 | **Golden Gate assemble** <br><sub>`golden_gate_assemble`</sub> | What construct do these parts make in a Type-IIS (Golden Gate, MoClo) reaction? |
 | **Ligate fragments** <br><sub>`ligate_fragments`</sub> | What products do these fragments make when their ends are ligated (after any per-fragment digest)? |
-| **Plan thermocycler program** <br><sub>`plan_thermocycler_program`</sub> | Plan the cycling programme for an amplicon on a NAMED enzyme, and check the reaction against that manufacturer's own published limits. |
+| **Plan thermocycler program** <br><sub>`plan_thermocycler_program`</sub> | What cycling program does this amplicon need on this polymerase, by its manufacturer's protocol? |
 | **Protein digest** <br><sub>`protein_digest`</sub> | Which peptides, masses and m/z values does a proteolytic digest of this protein give? |
 | **Rank strategies** <br><sub>`rank_strategies`</sub> | Which assembly chemistries can build a construct from these parts, and what does each cost and risk? |
 | **Recombine** <br><sub>`recombine`</sub> | What products does a site-specific or homologous recombination between these molecules give (Gateway BP/LR, Cre/loxP, a serine integrase, homology arms, CRISPR knock-in)? |
 | **Restriction ligate** <br><sub>`restriction_ligate`</sub> | What products survive a one-pot restriction-ligation, where re-formed sites are cut again? |
 | **Run gel lane** <br><sub>`run_gel_lane`</sub> | Which bands, and in which DNA form, does a ladder, plasmid, digest or PCR lane of this molecule give? |
-| **Run gel plate** <br><sub>`run_gel_plate`</sub> | Run a multi-lane virtual agarose gel and return its READING, not just its bands: how many lanes carrying how many bands over what range, positioned by which ladder, plus only the cautions this plate earned |
+| **Run gel plate** <br><sub>`run_gel_plate`</sub> | Where does each band run on this agarose gel, lane by lane? |
 | **Score overhang fidelity** <br><sub>`score_overhang_fidelity`</sub> | What fraction of assemblies will ligate every junction correctly with this overhang set, by measured T4 ligase data? |
 | **Scrub restriction sites** <br><sub>`scrub_restriction_sites`</sub> | Which fewest silent codon changes remove the forbidden restriction sites from a CDS? |
 
@@ -209,7 +209,7 @@ _Primer design for every kind of PCR, melting temperatures and reaction simulati
 | **Design CODEHOP** <br><sub>`design_codehop`</sub> | Which hybrid degenerate-core primers does a block of aligned protein give, for homologues too diverged for nucleotide design? |
 | **Design degenerate primers** <br><sub>`design_degenerate_primers`</sub> | Which degenerate primers amplify every member of this aligned family, and how much of it does each cover? |
 | **Design LAMP primers** <br><sub>`design_lamp_primers`</sub> | Which four core LAMP oligos, and optional loop primers, does this template give, judged against PrimerExplorer V5's criteria? |
-| **Design primer pairs** <br><sub>`design_primer_pairs`</sub> | The Primer Designer's own ranked search: scan the record for primer pairs inside a product-size, Tm, length and GC window, score every candidate on Tm, dimers, hairpins, 3' stability, repeats, clamp and specificity un… |
+| **Design primer pairs** <br><sub>`design_primer_pairs`</sub> | Which primer pairs in this window score best on Tm, dimers, hairpins, 3' stability, repeats, clamp and specificity under these weights? |
 | **Design primers** <br><sub>`design_primers`</sub> | Which primer pair amplifies this region, at what Tm, annealing temperature and cycling programme? |
 | **Design sequencing primers** <br><sub>`design_sequencing_primers`</sub> | Which walk of primers reads this whole region, with what overlap, and what cannot be reached? |
 | **Fusion PCR** <br><sub>`fusion_pcr`</sub> | What single product does overlap-extension PCR give from fragments that share terminal homology? |
@@ -229,48 +229,49 @@ _Guide design and scoring, off-targets, screens, and editing outcomes measured f
 | **CRISPR analyze screen** <br><sub>`crispr_analyze_screen`</sub> | Which genes are hits in a pooled CRISPR screen, by gene-level Bayes factor? |
 | **CRISPR design guides** <br><sub>`crispr_design_guides`</sub> | Which CRISPR guides can be made against this target, and how good is each one on-target and off-target? |
 | **CRISPR design library** <br><sub>`crispr_design_library`</sub> | Which oligos should be ordered for an sgRNA pool against these targets, with the vector's overhangs and optional barcodes? |
-| **CRISPR quantify edits** <br><sub>`crispr_quantify_edits`</sub> | Quantify a CRISPR edit from a pair of Sanger traces |
-| **CRISPR score DeepHF** <br><sub>`crispr_score_deephf`</sub> | Score CRISPR guides with DeepHF: a predicted knockout EFFICIENCY between 0 and 1 for wild-type SpCas9 (U6 or T7 promoter), eSpCas9(1.1) or SpCas9-HF1. |
-| **CRISPR score DeepSpCas9** <br><sub>`crispr_score_deepspcas9`</sub> | Score CRISPR guides with DeepSpCas9 (Kim et al. |
-| **Detect trace indel** <br><sub>`detect_trace_indel`</sub> | Ask whether a Sanger trace splits into TWO READS OF DIFFERENT LENGTH, which is what a heterozygous insertion or deletion does: clean up to the indel, then a superposition of two sequences offset by its length. |
+| **CRISPR quantify edits** <br><sub>`crispr_quantify_edits`</sub> | How much of the edited population carries which indels, from a control and an edited trace (ICE)? |
+| **CRISPR score DeepHF** <br><sub>`crispr_score_deephf`</sub> | What knockout efficiency does DeepHF predict for each guide under this nuclease and promoter? |
+| **CRISPR score DeepSpCas9** <br><sub>`crispr_score_deepspcas9`</sub> | What indel frequency does DeepSpCas9 predict for each 30-nt context? |
+| **Detect trace indel** <br><sub>`detect_trace_indel`</sub> | Does this trace split into two reads of different length, as a heterozygous indel does? |
 | **Fold guide** <br><sub>`fold_guide`</sub> | Does a spacer base-pair into its sgRNA scaffold, and what does the whole guide RNA fold into? |
 | **List sgRNA scaffolds** <br><sub>`list_sgrna_scaffolds`</sub> | Which sgRNA scaffolds has this workbench sourced, for which nucleases, from which publication? |
 | **Peptide mass** <br><sub>`peptide_mass`</sub> | What is this peptide's monoisotopic and average mass, and its m/z at each charge? |
 | **Protein signal peptide** <br><sub>`protein_signal_peptide`</sub> | Where would signal peptidase cut this protein, by von Heijne's weight matrix? |
-| **Quantify base editing** <br><sub>`quantify_base_editing`</sub> | Quantify BASE EDITING from a single Sanger trace, with no control read |
-| **Screen contamination** <br><sub>`screen_contamination`</sub> | Screen a nucleotide sequence for vector, adapter, linker and primer contamination against NCBI's UniVec, using VecScreen's own BLASTn parameters and category rules. |
+| **Quantify base editing** <br><sub>`quantify_base_editing`</sub> | What fraction of each base in the guide window was edited, from one trace (EditR)? |
+| **Screen contamination** <br><sub>`screen_contamination`</sub> | Does this sequence carry vector, adapter, linker or primer contamination from UniVec, and how strong is each match? |
 | **Screen guides** <br><sub>`screen_guides`</sub> | Which guide spacers fail the pre-acceptance screens: GC, self-complementary hairpins, and hairpins against the sgRNA backbone? |
-| **Screen molecule library** <br><sub>`screen_molecule_library`</sub> | Screen every structure of a library at once against drug-likeness rules and structural-alert catalogs, as the library grid does, and bin one rule property across it, split at the bound of a chosen rule. |
+| **Screen molecule library** <br><sub>`screen_molecule_library`</sub> | How does each structure of this library fare against these rules and alerts? |
 | **Screen oligo structure** <br><sub>`screen_oligo_structure`</sub> | Which oligos in a set form hairpins, self-dimers or cross-dimers, at any position and at the 3' end? |
 | **Search off targets** <br><sub>`search_off_targets`</sub> | Which sites in this sequence could a guide also cut, and how specific is the guide within it? |
 | **Survey off targets** <br><sub>`survey_off_targets`</sub> | How many off-target sites, by mismatch class, does each of these spacers have in this sequence? |
-| **TIDE quantify indels** <br><sub>`tide_quantify_indels`</sub> | Quantify a CRISPR edit from a pair of Sanger traces by TIDE (Brinkman et al.) |
+| **TIDE quantify indels** <br><sub>`tide_quantify_indels`</sub> | How abundant is each indel size in the edited population (TIDE)? |
 
 </details>
 
 <details>
-<summary><b>📈 Sanger, sequencing & verification</b> · 17 tools</summary>
+<summary><b>📈 Sanger, sequencing & verification</b> · 18 tools</summary>
 
 _Trace reading, base calling, construct verification, read QC and alignment to a reference._
 
 | Tool | What it answers |
 |---|---|
-| **Adopt trace calls** <br><sub>`adopt_trace_calls`</sub> | Replace a Sanger read's own base calls with TraceTuner's, on the trace, so the rest of the editor works from the re-called read: its sequence, its consensus, its verification against a reference, and every export. |
-| **Call bases from trace** <br><sub>`call_bases_from_trace`</sub> | Call the bases of a Sanger trace from the signal, discarding the instrument's calls and deriving the bases, their positions and their quality from the peaks. |
-| **Call mixed bases from trace** <br><sub>`call_mixed_bases_from_trace`</sub> | Call the bases of a Sanger trace AND ask at every position whether a second allele is present, writing a two-base IUB code (R, Y, S, W, K, M) where it is. |
-| **Compare reads to reference** <br><sub>`compare_reads_to_reference`</sub> | Compare a SET of sequencing reads against one reference in ONE shared frame: align every read to the reference, vote a consensus column by column, and report the positions where the reads differ from it, each with the… |
-| **Consensus from traces** <br><sub>`consensus_from_traces`</sub> | Merge one or two Sanger reads into a consensus with the ported SeqTrace caller. |
+| **Adopt trace calls** <br><sub>`adopt_trace_calls`</sub> | Replace the open read's calls with TraceTuner's. |
+| **Call bases from trace** <br><sub>`call_bases_from_trace`</sub> | What bases does the signal call, independent of the instrument's calls? |
+| **Call mixed bases from trace** <br><sub>`call_mixed_bases_from_trace`</sub> | Where does a second allele sit under the primary call? |
+| **Compare reads to reference** <br><sub>`compare_reads_to_reference`</sub> | Where do this set of reads, aligned in one frame, differ from the reference, and what does each change do to the protein? |
+| **Consensus from traces** <br><sub>`consensus_from_traces`</sub> | What is the consensus of these one or two reads? |
 | **Demultiplex reads** <br><sub>`demultiplex_reads`</sub> | Which index did each read come from, and how many cannot be assigned reliably? |
-| **Draw trace** <br><sub>`draw_trace`</sub> | Draw a window of a Sanger read as an SVG figure: the four dye traces over their called bases, the per-base Phred bars and a base ruler. |
+| **Draw trace** <br><sub>`draw_trace`</sub> | Draw this window of the read as a figure. |
+| **FASTQ QC** <br><sub>`fastq_qc`</sub> | Is this FASTQ run fit to use, module by module, the way a FastQC report would grade it? |
 | **Map reads** <br><sub>`map_reads`</sub> | Where on the reference does each read or contig align, with what MAPQ, as SAM? |
 | **Read sequencing QC** <br><sub>`read_sequencing_qc`</sub> | Is a disappointing read the clone's fault or the run's, from the provider's coverage table or summary? |
 | **Read structure consensus** <br><sub>`read_structure_consensus`</sub> | Which base pairs does a Stockholm alignment's consensus structure state, and how many aligned rows actually form each one? |
-| **Recompute trace quality** <br><sub>`recompute_trace_quality`</sub> | Re-score a Sanger trace's own base calls from the signal, replacing the instrument's Phred values with ones measured from the peaks. |
-| **Restore trace file calls** <br><sub>`restore_trace_file_calls`</sub> | Put an open Sanger read back on the base calls its FILE carries, undoing an adopted re-call. |
-| **Trace raw signal** <br><sub>`trace_raw_signal`</sub> | The UNPROCESSED signal of a Sanger trace: how many scans the instrument recorded, where each channel's baseline sits, the peak raw value, and how many scans analysis discarded off the front as dye front. |
+| **Recompute trace quality** <br><sub>`recompute_trace_quality`</sub> | What Phred quality does each of this trace's calls earn, measured from its peaks? |
+| **Restore trace file calls** <br><sub>`restore_trace_file_calls`</sub> | Put the open read back on its file's own calls. |
+| **Trace raw signal** <br><sub>`trace_raw_signal`</sub> | What did the instrument record before processing: scans, baselines and peak values per channel? |
 | **Trim reads** <br><sub>`trim_reads`</sub> | What do these FASTQ reads look like after the adapters and low-quality ends are trimmed, and how much was removed? |
-| **Trim trace** <br><sub>`trim_trace`</sub> | Trim a Sanger read's low-quality ends, by either of the two methods that answer different questions: the instrument's own Mott record as written into the file, or a sliding mean-Phred window computed here. |
-| **Verify construct** <br><sub>`verify_construct`</sub> | Compare a sequencing RESULT against the construct you designed and say what differs, where, and what it lands in. |
+| **Trim trace** <br><sub>`trim_trace`</sub> | Where should this read's low-quality ends be cut, by the method named? |
+| **Verify construct** <br><sub>`verify_construct`</sub> | Where does the sequencing result differ from the designed construct, and what does each difference land in? |
 | **Verify read** <br><sub>`verify_read`</sub> | Does a sequencing read verify the reference, and which differences does it show? |
 
 </details>
@@ -289,7 +290,7 @@ _Amplification and melt curves, RDML runs, droplet gating, uncertainty and relat
 | **Design qPCR assay** <br><sub>`design_qpcr_assay`</sub> | Which primer pair and hydrolysis probe make a qPCR assay on this target, ranked by penalty? |
 | **Gate droplets** <br><sub>`gate_droplets`</sub> | What is the template concentration in each ddPCR well, from the raw droplet amplitudes rather than the instrument's count? |
 | **Melt profile** <br><sub>`melt_profile`</sub> | How does this molecule melt: the helicity curve, its Tm50, and the domains that melt together behind each HRM peak? |
-| **Melting temperature** <br><sub>`melting_temperature`</sub> | The melting temperature of an oligo IN A BUFFER, UNDER A MODEL |
+| **Melting temperature** <br><sub>`melting_temperature`</sub> | What is this oligo's melting temperature in this buffer under this model, step by step? |
 | **Propagate uncertainty** <br><sub>`propagate_uncertainty`</sub> | How uncertain is a reported qPCR quantity, given the uncertainty of each measurement in it, and which measurement contributes most? |
 | **Quantify dPCR** <br><sub>`quantify_dpcr`</sub> | What is the absolute concentration of a target from digital PCR partition counts, with a confidence interval? |
 | **Read RDML run** <br><sub>`read_rdml_run`</sub> | What does an RDML export hold, and what are one run's curves, Cq values, melts and partition counts as tables? |
@@ -298,46 +299,49 @@ _Amplification and melt curves, RDML runs, droplet gating, uncertainty and relat
 </details>
 
 <details>
-<summary><b>🎛️ Design & expression</b> · 35 tools</summary>
+<summary><b>🎛️ Design & expression</b> · 38 tools</summary>
 
 _Codon optimisation, RBS and operons, probes, barcodes, genetic circuits and annotation._
 
 | Tool | What it answers |
 |---|---|
-| **Annotate region** <br><sub>`annotate_region`</sub> | Say what a genomic region holds in the reference tracks: the genes and RefSeq transcripts it overlaps, which complete coding sequences it CONTAINS (the only case where a residue-level design is honest), the DGV struct… |
+| **Annotate region** <br><sub>`annotate_region`</sub> | What genes, transcripts and dosage-sensitive regions does this genomic region overlap or contain? |
 | **Audit barcodes** <br><sub>`audit_barcodes`</sub> | What minimum distance does this index set have, how many errors does that correct, and which subset survives a stricter budget? |
 | **Audit CDS annotations** <br><sub>`audit_cds_annotations`</sub> | Does every annotated CDS of a map translate cleanly from its own bases and genetic code? |
-| **Auto annotate** <br><sub>`auto_annotate`</sub> | Find and name known features on the subject |
-| **Back translate** <br><sub>`back_translate`</sub> | Protein → DNA: the coding sequence that would encode a protein, weighted by a real codon-usage table. |
+| **Auto annotate** <br><sub>`auto_annotate`</sub> | Which known parts (vector elements, origins, markers, tags, lox and att sites) does this sequence carry, and where? |
+| **Back translate** <br><sub>`back_translate`</sub> | What coding sequence encodes this protein under this host's codon usage and this rule? |
 | **Build ENA submission** <br><sub>`build_ena_submission`</sub> | What flat file and manifest does ENA's Webin-CLI take for this record, and what would its validator refuse? |
 | **Build GenBank submission** <br><sub>`build_genbank_submission`</sub> | What submission set (fasta with source modifiers and a feature table) does NCBI's table2asn take for this record, and what had to be refused or migrated? |
 | **Calculate power** <br><sub>`calculate_power`</sub> | How many replicates does a planned test need to detect an effect, or what power, detectable effect or significance level does a fixed design give? |
 | **Calculate rnaseq power** <br><sub>`calculate_rnaseq_power`</sub> | How many biological replicates, or how much sequencing depth, does an RNA-seq comparison need to detect a fold change in one gene? |
-| **Check color balance** <br><sub>`check_color_balance`</sub> | Will the sequencer SEE these indexes? |
-| **Check index pool** <br><sub>`check_index_pool`</sub> | Will this pool of sample indexes actually sequence? |
+| **Check color balance** <br><sub>`check_color_balance`</sub> | Will the sequencer see a signal in every channel at every index cycle for these indexes, on each chemistry? |
+| **Check index pool** <br><sub>`check_index_pool`</sub> | Will this pool of sample indexes sequence: duplicates, length, pairwise distance, color balance and hopping risk? |
 | **Check manufacturability** <br><sub>`check_manufacturability`</sub> | Does this sequence meet what a named synthesis vendor publishes it can make: length, GC, homopolymers and repeats? |
 | **Check scorpion stem** <br><sub>`check_scorpion_stem`</sub> | Does a Scorpion probe's stem melt below the loop-target duplex by the margin the design needs? |
-| **Codon optimality** <br><sub>`codon_optimality`</sub> | Frequency of optimal codons (Fop, Ikemura 1981) for an in-frame CDS against a real codon-usage table: what share of its codons are the ones a highly-expressed gene in that host would use. |
-| **Codon table fetch** <br><sub>`codon_table_fetch`</sub> | Fetch a real codon-usage table for an organism and save it, so later steps can score against it by name. |
+| **Codon optimality** <br><sub>`codon_optimality`</sub> | What share of this CDS's codons are the optimal ones for this host (Fop)? |
+| **Codon table fetch** <br><sub>`codon_table_fetch`</sub> | What is this organism's codon usage, counted from its annotated CDS or as a published table? |
 | **Codon usage analysis** <br><sub>`codon_usage_analysis`</sub> | How does this CDS's codon usage compare with an organism's: CAI, GC, rare codons, and the two reference-free bias measures? |
 | **Codon usage distance** <br><sub>`codon_usage_distance`</sub> | How far is this region's codon usage from the record's other genes (CUFS)? |
 | **Design barcodes** <br><sub>`design_barcodes`</sub> | Which index set of this size has a guaranteed minimum distance, and what does it actually correct? |
-| **Design FREE codes** <br><sub>`design_free_codes`</sub> | Generate INDEL-correcting barcodes |
+| **Design FREE codes** <br><sub>`design_free_codes`</sub> | Which barcodes of this length correct this many insertions, deletions and substitutions? |
 | **Design genetic circuit** <br><sub>`design_genetic_circuit`</sub> | Which characterised repressor gates compute this logic function, with what ON/OFF dynamic range, and what DNA does the circuit need? |
 | **Design HCR probes** <br><sub>`design_hcr_probes`</sub> | Which HCR v3.0 split-initiator probe pairs tile this target within their composition and free-energy windows? |
-| **Design ish probes** <br><sub>`design_ish_probes`</sub> | Which oligo set images this target best: tiled candidates meeting Tm, GC and composition, screened for off-target binding and gathered into a set? |
+| **Design ish probes** <br><sub>`design_ish_probes`</sub> | Which oligo set images this target best: tiled candidates meeting Tm, GC and composition, screened for off-target binding and abundant k-mers, and gathered into a set? |
 | **Design knockout package** <br><sub>`design_knockout_package`</sub> | What does a complete knockout or knock-in build need: guides, an off-target census, a repair template with arms, screening primers outside the arms, the protocol, and what to buy? |
+| **Design MERFISH probes** <br><sub>`design_merfish_probes`</sub> | Which encoding probes make this transcript readable in a MERFISH experiment under this codeword, and how specific is each? |
 | **Design oligo plate order** <br><sub>`design_oligo_plate_order`</sub> | In which wells, in the supplier's own fill order, does an oligo set go on a plate order? |
 | **Design padlock probes** <br><sub>`design_padlock_probes`</sub> | Which padlock probes target this transcript for in-situ sequencing, and which junctions could be ligated on another transcript? |
 | **Design RBS** <br><sub>`design_rbs`</sub> | Which 5'UTR puts a CDS's translation initiation at a target strength? |
+| **Design xenium probes** <br><sub>`design_xenium_probes`</sub> | Which 40 nt targets of this transcript meet 10x's Xenium custom-panel rules, and which would another transcript also bind? |
 | **Discover annotation contradictions** <br><sub>`discover_annotation_contradictions`</sub> | Which signal peptides or transmembrane segments in reviewed human UniProt does a sequence predictor contradict? |
 | **Discover codon outliers** <br><sub>`discover_codon_outliers`</sub> | Which genes of a genome use synonymous codons in a way the genome's own average does not explain? |
-| **Estimate effect size** <br><sub>`estimate_effect_size`</sub> | How large is the effect in pilot data, standardised, with a confidence interval, ready to size the full experiment? |
+| **Estimate effect size** <br><sub>`estimate_effect_size`</sub> | How large is the effect in pilot data, standardized, with a confidence interval, ready to size the full experiment? |
 | **Export barcodes** <br><sub>`export_barcodes`</sub> | What does this index set look like as an order sheet, a FASTA, a SampleSheet, or the actual oligos? |
 | **Optimize sequence** <br><sub>`optimize_sequence`</sub> | What sequence satisfies these constraints and scores best on these objectives? |
 | **Rank next tests** <br><sub>`rank_next_tests`</sub> | Which candidate experiment would teach the most about the hypothesis it is registered against, and how much of it is worth running? |
 | **Rank tradeoffs** <br><sub>`rank_tradeoffs`</sub> | Which candidates in a table does no other candidate beat on every objective at once, how deep does each of the rest sit, and which candidate beats it? |
 | **Score RBS** <br><sub>`score_rbs`</sub> | How strong is the ribosome-binding site already in front of this start codon, and what sets that strength? |
+| **Simulate rnaseq power** <br><sub>`simulate_rnaseq_power`</sub> | For a two-group RNA-seq experiment analyzed with edgeR, what power and false discovery rate does each number of replicates actually achieve, for genes at each expression level, and how would more sequencing depth chan… |
 | **Tree taxon annotations** <br><sub>`tree_taxon_annotations`</sub> | What does this NeXML file say about each of its taxa? |
 
 </details>
@@ -351,8 +355,8 @@ _Pairwise and multiple alignment, dot plots, model selection, trees and tree com
 |---|---|
 | **Align read** <br><sub>`align_read`</sub> | How does one sequencing read align to the reference, as two gapped rows? |
 | **Align sequences** <br><sub>`align_sequences`</sub> | How do these sequences line up column by column, by partial-order alignment (a pile of reads over one locus) or progressive alignment (a family of homologous genes)? |
-| **Alignment agreement** <br><sub>`alignment_agreement`</sub> | Read an alignment window and say how well its reads agree with the reference underneath them, the way the pileup's own bar does: the compared and differing base counts, plus the RefSeq gene models and known dbSNP vari… |
-| **Alignment window** <br><sub>`alignment_window`</sub> | Read one window of a BAM or SAM: its reads, the depth across it, and what the pairs say about the library |
+| **Alignment agreement** <br><sub>`alignment_agreement`</sub> | How well do the reads in this window agree with the reference beneath them? |
+| **Alignment window** <br><sub>`alignment_window`</sub> | Which reads, what depth and what pairing does this window of the BAM or SAM hold? |
 | **Build tree** <br><sub>`build_tree`</sub> | What phylogeny do these aligned sequences support, under a distance, parsimony, maximum-likelihood or Bayesian method, with branch support? |
 | **Compare trees** <br><sub>`compare_trees`</sub> | How far apart are these trees over the same taxa, and what topology do they share? |
 | **Discover gene tree discordance** <br><sub>`discover_gene_tree_discordance`</sub> | Which genes' own alignments reject the species tree (Shimodaira-Hasegawa test against its nearest-neighbour rearrangements)? |
@@ -361,7 +365,7 @@ _Pairwise and multiple alignment, dot plots, model selection, trees and tree com
 | **Dot plot grid** <br><sub>`dot_plot_grid`</sub> | Which members of this sequence set share material with which, as an all-against-all grid of dot plots? |
 | **Draw alignment** <br><sub>`draw_alignment`</sub> | What does this window of an alignment look like as a figure? |
 | **Draw tree** <br><sub>`draw_tree`</sub> | What does this tree look like as a figure? |
-| **EBI align** <br><sub>`ebi_align`</sub> | Run a sequence through EMBL-EBI's Job Dispatcher: Clustal Omega, MUSCLE, MAFFT, Kalign, T-Coffee, EMBOSS needle/water/matcher/stretcher, LALIGN, phmmer, hmmscan, PSI-BLAST or Phobius. |
+| **EBI align** <br><sub>`ebi_align`</sub> | What does the EMBL-EBI reference tool named return for these sequences? |
 | **Export tree** <br><sub>`export_tree`</sub> | What does this tree look like in Newick, NEXUS, PhyloXML or NeXML? |
 | **Select substitution model** <br><sub>`select_substitution_model`</sub> | Which substitution model do these data prefer, by AIC, AICc or BIC with Akaike weights? |
 | **Transform tree** <br><sub>`transform_tree`</sub> | What does this tree look like re-rooted, pruned, ladderized, or with weak branches collapsed? |
@@ -376,48 +380,50 @@ _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 
 | Tool | What it answers |
 |---|---|
-| **Apply variant call** <br><sub>`apply_variant_call`</sub> | Substitute one called ALT allele into a sequence and return the edited bases, the range the edit occupies and the length change. |
-| **Browse region** <br><sub>`browse_region`</sub> | Read one window of a genome the way a genome browser shows it: the cytogenetic bands it spans, the transcripts in the chosen RefSeq set, which residues of each protein the window encodes (translated from the assembly’… |
+| **Apply variant call** <br><sub>`apply_variant_call`</sub> | What sequence results from substituting this called ALT allele? |
+| **Browse region** <br><sub>`browse_region`</sub> | What does this window of the genome hold: bands, transcripts and nuclease sites? |
 | **Check invariants** <br><sub>`check_invariants`</sub> | Is this designed sequence admissible: protein unchanged, forbidden sites absent, frame intact, length, GC and CAI within bounds? |
-| **Copy number allele split** <br><sub>`copy_number_allele_split`</sub> | Read an Affymetrix array result's own allele-specific copy number: for each segment the major and minor allele counts (1+1, 2+0, 0+0), what they mean (balanced, allelic imbalance, loss of heterozygosity placed against… |
-| **Copy number compare** <br><sub>`copy_number_compare`</sub> | Join two Affymetrix copy-number samples' own calls and report which events they share and which only one of them carries: for every pair, the chromosome both files resolved to, the kind, the bases they overlap and the… |
-| **Copy number findings** <br><sub>`copy_number_findings`</sub> | Scan every indexed chromosome of an Affymetrix copy-number container and report what the file itself called: gains, losses and stretches of homozygosity, with their positions, marker counts and spans, plus a per-chrom… |
-| **Copy number loh** <br><sub>`copy_number_loh`</sub> | Recompute loss of heterozygosity from an Affymetrix array's own per-marker genotype calls, rather than reading the runs the producer wrote: APT's window method, with the false-positive rate and the assumed genotyping… |
-| **Copy number mosaicism** <br><sub>`copy_number_mosaicism`</sub> | Estimate which mosaic fraction class each region of one chromosome is closest to, as Affymetrix Power Tools computes it. |
-| **Copy number read** <br><sub>`copy_number_read`</sub> | Read an Affymetrix copy-number container (CNCHP/CYCHP/OSCHP/CHP) and say what is in it: the algorithm and array that produced it, its data sets and their graphs, the per-chromosome marker index the file carries, and |
-| **Copy number regions** <br><sub>`copy_number_regions`</sub> | Place an Affymetrix copy-number sample's own calls in ClinGen's curated regions: for each region, which gains, losses or stretches of homozygosity fall in it, at what reciprocal overlap, and how much of the region the… |
-| **Copy number segment** <br><sub>`copy_number_segment`</sub> | Segment one chromosome of an Affymetrix copy-number container by up to four independent methods and report where they agree. |
-| **Copy number somatic** <br><sub>`copy_number_somatic`</sub> | Read an Affymetrix array result's own somatic-mutation calls: one row per mutation probe set with the producer's call, the score behind it and the two thresholds that call was graded against. |
+| **Copy number allele split** <br><sub>`copy_number_allele_split`</sub> | What major and minor allele copy number does each segment carry? |
+| **Copy number compare** <br><sub>`copy_number_compare`</sub> | Which copy-number events do two samples share, and which only one carries? |
+| **Copy number findings** <br><sub>`copy_number_findings`</sub> | Which gains, losses and runs of homozygosity did the file's producer call? |
+| **Copy number loh** <br><sub>`copy_number_loh`</sub> | Where is heterozygosity lost, recomputed from the array's own genotype calls? |
+| **Copy number mosaicism** <br><sub>`copy_number_mosaicism`</sub> | Which mosaic fraction class is each region of this chromosome closest to? |
+| **Copy number read** <br><sub>`copy_number_read`</sub> | What does this Affymetrix copy-number file hold: algorithm, array, data sets and per-marker values? |
+| **Copy number regions** <br><sub>`copy_number_regions`</sub> | Which of the sample's own calls fall in each ClinGen curated region? |
+| **Copy number segment** <br><sub>`copy_number_segment`</sub> | Where are the breakpoints in this chromosome's copy-number signal, by each method named? |
+| **Copy number somatic** <br><sub>`copy_number_somatic`</sub> | What somatic-mutation calls does this array result carry? |
 | **Design expression variants** <br><sub>`design_expression_variants`</sub> | Which codon-optimised variants of this CDS does an expression trial need, and how do they differ? |
-| **Lookup variant** <br><sub>`lookup_variant`</sub> | Look up a variant: ClinVar clinical interpretation, dbSNP records, gnomAD population frequency and gene constraint, CADD deleteriousness, or GWAS/eQTL associations. |
+| **Lookup variant** <br><sub>`lookup_variant`</sub> | What does the authority named return for this variant? |
 | **Population ancestry** <br><sub>`population_ancestry`</sub> | What mixture of K ancestral populations does each sample look like, and which K does cross-entropy prefer? |
 | **Population Fst** <br><sub>`population_fst`</sub> | How differentiated are these populations, per site and averaged, with a jackknife standard error? |
 | **Population site stats** <br><sub>`population_site_stats`</sub> | What are this call set's per-site and per-sample genotype statistics, including heterozygosity, F and the exact Hardy-Weinberg test? |
-| **Read variant calls** <br><sub>`read_variant_calls`</sub> | Read a variant call set (VCF, bgzipped VCF or BCF) and return the records matching a query: a locus, a variant class, a QUAL floor, PASS-only, a sample that is not hom-ref, or an INFO key. |
-| **Score variant effect** <br><sub>`score_variant_effect`</sub> | Score protein substitutions with ESM-2, the zero-shot way facebookresearch/esm's own predict.py does: how much less (or more) likely the mutant residue is than the wild type at that site, under a protein language model. |
-| **Variant call summary** <br><sub>`variant_call_summary`</sub> | Summarize a variant call set the way bcftools stats does: records by class, transitions and transversions with their ratio, the twelve directed substitutions, indel lengths, per-contig counts, the FILTER tally, the QU… |
+| **Read variant calls** <br><sub>`read_variant_calls`</sub> | Which records of this VCF or BCF match this query? |
+| **Score variant effect** <br><sub>`score_variant_effect`</sub> | How much less (or more) likely does ESM-2 find each substitution than the wild-type residue? |
+| **Variant call summary** <br><sub>`variant_call_summary`</sub> | What does bcftools stats say about this call set? |
 
 </details>
 
 <details>
-<summary><b>🧩 Proteins, domains & proteomics</b> · 24 tools</summary>
+<summary><b>🧩 Proteins, domains & proteomics</b> · 26 tools</summary>
 
 _Domains and motifs, residue sites, protein properties and peptide evidence._
 
 | Tool | What it answers |
 |---|---|
 | **Antibody antigen contacts** <br><sub>`antibody_antigen_contacts`</sub> | Which antibody residues touch which antigen residues in this complex, how close, and what kind of interaction is each? |
+| **Antibody canonical classes** <br><sub>`antibody_canonical_classes`</sub> | Which known loop conformation does each CDR of this antibody's variable domain most likely adopt? |
 | **Antibody isotype** <br><sub>`antibody_isotype`</sub> | Which immunoglobulin gene and allele is this chain's constant region, and where does each IMGT domain sit on it? |
 | **Antibody liabilities** <br><sub>`antibody_liabilities`</sub> | Which sequence liabilities does this variable domain carry, and in which IMGT region does each sit? |
 | **Antibody molecule** <br><sub>`antibody_molecule`</sub> | What are an assembled Fab's or IgG's mass, isoelectric point, charge at a pH, and extinction coefficient reduced and oxidised? |
+| **Antibody position frequencies** <br><sub>`antibody_position_frequencies`</sub> | Which residues of this variable domain are unusual at their IMGT position, measured against the species' germline alleles or an expressed repertoire? |
 | **Bayesian protein inference** <br><sub>`bayesian_protein_inference`</sub> | What is the posterior probability that each protein, group and match is present? |
-| **DELTA BLAST SMART** <br><sub>`delta_blast_smart`</sub> | DELTA-BLAST, run on this machine: build a position-specific profile for a protein from the SMART conserved domains it contains, then search other proteins with it (one PSI-BLAST iteration) |
-| **Find linear motifs** <br><sub>`find_linear_motifs`</sub> | Short linear motifs in a protein: degrons, docking sites, targeting signals, cleavage and modification sites |
+| **DELTA BLAST SMART** <br><sub>`delta_blast_smart`</sub> | Which of these subject proteins resemble this one, by a profile built from its SMART domains? |
+| **Find linear motifs** <br><sub>`find_linear_motifs`</sub> | Which short linear motifs from ELM does this protein carry, after ELM's own filters? |
 | **Graft antibody CDRs** <br><sub>`graft_antibody_cdrs`</sub> | Which human germline framework accepts this domain's CDRs, and what is the grafted sequence? |
 | **Humanize antibody** <br><sub>`humanize_antibody`</sub> | Which framework mutations does Sapiens make to humanize this variable domain, keeping the parental CDRs? |
 | **Infer proteins** <br><sub>`infer_proteins`</sub> | Which proteins do these peptide-spectrum matches support, and which cannot be told apart? |
-| **Lookup protein** <br><sub>`lookup_protein`</sub> | Look up a protein: UniProt records, InterPro/Pfam domain architecture, STRING interaction networks, Human Protein Atlas expression, or a predicted/experimental structure from AlphaFold, PDB or EMDB. |
-| **Lookup residue sites** <br><sub>`lookup_residue_sites`</sub> | The individual catalytic, substrate-binding, metal-binding and interface residues a member database annotates INSIDE a domain, for a known protein. |
+| **Lookup protein** <br><sub>`lookup_protein`</sub> | What does the authority named return for this protein? |
+| **Lookup residue sites** <br><sub>`lookup_residue_sites`</sub> | Which catalytic, binding and interface residues do member databases annotate in this protein's domains? |
 | **Number antibody** <br><sub>`number_antibody`</sub> | Which antibody or TCR variable domains does this protein carry, how are they numbered, and which germlines are closest? |
 | **Protein disorder** <br><sub>`protein_disorder`</sub> | Which stretches of this protein does FoldIndex predict unfolded? |
 | **Protein disorder metapredict** <br><sub>`protein_disorder_metapredict`</sub> | What is this protein's per-residue disorder score, and which regions are IDRs, by metapredict? |
@@ -425,11 +431,11 @@ _Domains and motifs, residue sites, protein properties and peptide evidence._
 | **Protein profile** <br><sub>`protein_profile`</sub> | How does a chosen physicochemical scale vary along this protein? |
 | **Protein properties** <br><sub>`protein_properties`</sub> | What are this protein's mass, formula, isoelectric point, instability index and amphipathicity? |
 | **Protein topology** <br><sub>`protein_topology`</sub> | Which residues of this protein are inside, in a transmembrane helix, or outside, by the HMM-TM model? |
-| **RPS BLAST CDD** <br><sub>`rps_blast_cdd`</sub> | RPS-BLAST a protein against NCBI's Conserved Domain Database (CDD) or one of its member collections (Pfam, SMART, COG, KOG, PRK, TIGR, NCBI-curated), through NCBI Batch CD-Search. |
-| **RPS BLAST SMART** <br><sub>`rps_blast_smart`</sub> | rpsblast, run on this machine: find conserved domains in a protein against NCBI's SMART domain models (1,011 PSSMs from CDD). |
-| **RPSTBLASTN SMART** <br><sub>`rpstblastn_smart`</sub> | rpstblastn, run on this machine: find conserved domains in DNA by searching all six reading frames against NCBI's SMART domain models (1,011 PSSMs from CDD). |
+| **RPS BLAST CDD** <br><sub>`rps_blast_cdd`</sub> | Which conserved domains does NCBI's CD-Search find in this protein? |
+| **RPS BLAST SMART** <br><sub>`rps_blast_smart`</sub> | Which SMART domain models does this protein hit? |
+| **RPSTBLASTN SMART** <br><sub>`rpstblastn_smart`</sub> | Which SMART domains does this DNA encode in any of its six frames? |
 | **Scan motif sites** <br><sub>`scan_motif_sites`</sub> | Where does a transcription-factor matrix match this sequence, on either strand, at a threshold set as a fraction of that matrix's own score range? |
-| **Scan protein domains** <br><sub>`scan_protein_domains`</sub> | De-novo protein domain and family annotation: submits a protein to EMBL-EBI InterProScan and returns every member-database signature that matches it |
+| **Scan protein domains** <br><sub>`scan_protein_domains`</sub> | Which domains and families does InterProScan find in this protein? |
 
 </details>
 
@@ -440,22 +446,22 @@ _Molecules, conformers, scaffolds, reactions, chemical space and library screeni
 
 | Tool | What it answers |
 |---|---|
-| **Activity cliffs** <br><sub>`activity_cliffs`</sub> | SALI activity cliffs (Guha & Van Drie 2008) in a list of small molecules with one activity each: every pair scored as the activity difference over one minus the Tanimoto similarity of RDKit path fingerprints, steepest… |
-| **Assess small molecule** <br><sub>`assess_small_molecule`</sub> | Assess a small molecule given as SMILES or a molfile: RDKit's descriptors, medchem's drug-likeness rules (Lipinski, Veber, Ghose, Egan, REOS, rule of three, CNS and more) and the papers' own readings where medchem dep… |
-| **Canonical tautomer** <br><sub>`canonical_tautomer`</sub> | A small molecule's tautomers and the canonical one, as RDKit's TautomerEnumerator finds and scores them: 37 hydrogen-shift transforms (after MolVS and Sitzmann 2010), scored by aromatic rings, twelve weighted groups a… |
-| **Cluster molecules** <br><sub>`cluster_molecules`</sub> | Cluster or diversity-pick a list of small molecules on 1 − Tanimoto of Morgan radius-2 fingerprints: Butina sphere exclusion (RDKit ClusterData, optional reordering), MaxMin diversity picking (RDKit MaxMinPicker, seed… |
-| **Compare molecules** <br><sub>`compare_molecules`</sub> | How similar two small molecules are: Tanimoto under six RDKit fingerprints (Morgan/ECFP4, atom pair, topological torsion, RDKit path, pattern, MACCS), every DataStructs metric (Tanimoto, Dice, cosine, Sokal, Russell,… |
-| **Decompose r groups** <br><sub>`decompose_r_groups`</sub> | RDKit's R-group decomposition of a list of small molecules on a core given as SMARTS (default RGroupDecomposition parameters): per matched structure its core and substituents R1, R2 …, and the structures the core does… |
-| **Enumerate protonation states** <br><sub>`enumerate_protonation_states`</sub> | Enumerate a small molecule's protonation states across a pH window with Dimorphite-DL (Ropp et al. |
-| **Enumerate reaction** <br><sub>`enumerate_reaction`</sub> | Run a reaction SMARTS over lists of reactants, every combination, with RDKit's reaction engine: one list per reactant template, in template order. |
-| **Generate conformers** <br><sub>`generate_conformers`</sub> | 3D conformers of a small molecule by OpenChemLib's torsion-library generator, each scored and optionally minimized under MMFF94, MMFF94s or MMFF94s+ (whose MMFF94 equals Halgren's OPTIMOL on all 761 validation-suite s… |
-| **Lookup compound** <br><sub>`lookup_compound`</sub> | Look up a chemical compound or drug: ChEMBL molecules, mechanisms of action and bioactivity, PubChem properties, ChEBI ontology, Rhea reactions, or purchasable ZINC compounds. |
-| **Map chemical space** <br><sub>`map_chemical_space`</sub> | Principal components of a list of small molecules, computed as R's prcomp computes them, on the scaled property table or on Morgan radius-2 bits: each structure's scores on PC1 and PC2, every component's standard devi… |
-| **Map reaction atoms** <br><sub>`map_reaction_atoms`</sub> | Predict which reactant atom each product atom came from (atom-to-atom mapping) with RXNMapper (Schwaller et al., Sci. |
-| **Matched molecular pairs** <br><sub>`matched_molecular_pairs`</sub> | Matched molecular pairs (Hussain & Rea 2010) in a list of small molecules, as mmpdb finds them: pairs that differ by one change no larger than a heavy-atom limit, grouped by the change as a reaction SMIRKS, most pairs… |
-| **Scaffold network** <br><sub>`scaffold_network`</sub> | The scaffold network (Kruger et al. |
-| **Search molecule library** <br><sub>`search_molecule_library`</sub> | Which of a list of small molecules contain a SMARTS substructure, with RDKit's substructure library (pattern-fingerprint screen, then atom matching). |
-| **Write structure library** <br><sub>`write_structure_library`</sub> | Write a list of small molecules as one file: SDF (V2000 or V3000), each record named and, optionally, carrying its canonical SMILES and RDKit descriptors as data fields; or SMILES or CXSMILES, one record a line follow… |
+| **Activity cliffs** <br><sub>`activity_cliffs`</sub> | Which pairs of similar molecules differ most in activity (SALI)? |
+| **Assess small molecule** <br><sub>`assess_small_molecule`</sub> | What are this molecule's RDKit descriptors, drug-likeness rule results and structural alerts? |
+| **Canonical tautomer** <br><sub>`canonical_tautomer`</sub> | Which tautomers does this molecule have, and which is canonical? |
+| **Cluster molecules** <br><sub>`cluster_molecules`</sub> | How do these molecules cluster, or which are most diverse, on Morgan fingerprints? |
+| **Compare molecules** <br><sub>`compare_molecules`</sub> | How similar are these two molecules under each fingerprint? |
+| **Decompose r groups** <br><sub>`decompose_r_groups`</sub> | What R-groups does each molecule carry on this core? |
+| **Enumerate protonation states** <br><sub>`enumerate_protonation_states`</sub> | Which protonation states does this molecule take across this pH window? |
+| **Enumerate reaction** <br><sub>`enumerate_reaction`</sub> | What products does this reaction SMARTS give over these reactants? |
+| **Generate conformers** <br><sub>`generate_conformers`</sub> | What 3D conformers does this molecule take, and how is each scored? |
+| **Lookup compound** <br><sub>`lookup_compound`</sub> | What does the authority named return for this compound or drug? |
+| **Map chemical space** <br><sub>`map_chemical_space`</sub> | Where does each molecule sit on the principal components of the property table or fingerprint bits? |
+| **Map reaction atoms** <br><sub>`map_reaction_atoms`</sub> | Which reactant atom does each product atom come from? |
+| **Matched molecular pairs** <br><sub>`matched_molecular_pairs`</sub> | Which pairs of these molecules differ by one small change? |
+| **Scaffold network** <br><sub>`scaffold_network`</sub> | What is the scaffold network of these molecules? |
+| **Search molecule library** <br><sub>`search_molecule_library`</sub> | Which of these molecules contain this SMARTS substructure? |
+| **Write structure library** <br><sub>`write_structure_library`</sub> | Write these molecules as one structure file. |
 
 </details>
 
@@ -475,53 +481,55 @@ _Differential expression, gene-set enrichment and falsification-tested discovery
 | **Discover target validation** <br><sub>`discover_target_validation`</sub> | Does the evidence in a set of gene-level tables support a hypothesis that one gene drives a phenotype, by sequential falsification? |
 | **Gene set enrichment** <br><sub>`gene_set_enrichment`</sub> | Preranked gene set enrichment analysis (GSEA; Subramanian et al. |
 | **Gene set overrepresentation** <br><sub>`gene_set_overrepresentation`</sub> | Over-representation analysis (ORA): which gene sets hold more of a gene list than chance, by the one-sided hypergeometric test against a background, as clusterProfiler's enricher() runs it (enrichit 0.2.6). |
-| **Run discovery programme** <br><sub>`run_discovery_programme`</sub> | Which pre-registered hypotheses does a programme of falsification tests support, with the false discovery rate controlled across all of them? |
+| **Run discovery programme** <br><sub>`run_discovery_programme`</sub> | Which pre-registered hypotheses does a program of falsification tests support, with the false discovery rate controlled across all of them? |
 | **Validate gene trait** <br><sub>`validate_gene_trait`</sub> | Does public expression and GWAS evidence support a hypothesis that a gene is involved in a trait, by sequential falsification? |
 
 </details>
 
 <details>
-<summary><b>🗄️ Public databases & records</b> · 16 tools</summary>
+<summary><b>🗄️ Public databases & records</b> · 17 tools</summary>
 
 _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the record to any tool._
 
 | Tool | What it answers |
 |---|---|
-| **Apply feature file** <br><sub>`apply_feature_file`</sub> | Put the features from a GTF onto the record. |
+| **Apply feature file** <br><sub>`apply_feature_file`</sub> | Which features from this GTF land on the record, and which do not fit? |
 | **Cancel research run** <br><sub>`cancel_research_run`</sub> | Which pending hypotheses of a research run should never run? |
-| **Fetch record** <br><sub>`fetch_record`</sub> | Fetch a sequence by accession from an authoritative archive (NCBI Nucleotide or Protein, ENA, UniProtKB, the iGEM Registry, Addgene, or the EBI Dbfetch gateway) and hand it downstream as a real record with its annotat… |
+| **Fetch record** <br><sub>`fetch_record`</sub> | Give me this accession's record from the archive named. |
 | **History protocol** <br><sub>`history_protocol`</sub> | What numbered bench protocol does a construct's build history describe? |
-| **List databases** <br><sub>`list_databases`</sub> | The authoritative databases available, with what each one covers, whether it is reachable from the browser, and any license or coverage caveat. |
-| **List samples** <br><sub>`list_samples`</sub> | Browse the bundled sample library: the real bio files a new project can start from (GenBank and SnapGene plasmids, FASTA sets, alignments, Sanger traces, structures, variant calls and more), each with its id, format a… |
-| **Lookup clinical** <br><sub>`lookup_clinical`</sub> | Look up clinical and translational evidence: ClinicalTrials.gov trials, FDA labels and adverse events, Open Targets associations, CIViC cancer variant evidence, ClinGen curation, cBioPortal cohorts, or DepMap dependen… |
-| **Lookup gene** <br><sub>`lookup_gene`</sub> | Look up a gene or genomic region: Ensembl records, cross-references, MyGene identifiers, UCSC assembly data, GTEx expression, or BioMart tables. |
-| **Lookup omics** <br><sub>`lookup_omics`</sub> | Look up omics and regulation records: GEO and ArrayExpress experiments, PRIDE proteomics, MetaboLights, MGnify, ENCODE experiments and files, JASPAR motifs, or UniBind TF binding sites. |
-| **Lookup ontology** <br><sub>`lookup_ontology`</sub> | Resolve an ontology term, pathway or cell type: OLS ontologies, QuickGO annotations, Reactome pathways, KEGG entries, Rfam RNA families, CellGuide/PanglaoDB cell types and markers, or an antibody RRID. |
+| **List databases** <br><sub>`list_databases`</sub> | Which authoritative databases are available, and what does each cover? |
+| **List research runs** <br><sub>`list_research_runs`</sub> | Which research runs are there, and what state is each in? |
+| **List samples** <br><sub>`list_samples`</sub> | Which bundled sample files can a project start from? |
+| **Lookup clinical** <br><sub>`lookup_clinical`</sub> | What does the authority named return for this clinical or translational question? |
+| **Lookup gene** <br><sub>`lookup_gene`</sub> | What does the authority named return for this gene or genomic region? |
+| **Lookup omics** <br><sub>`lookup_omics`</sub> | What does the authority named return for this omics or regulation record? |
+| **Lookup ontology** <br><sub>`lookup_ontology`</sub> | What does the authority named return for this ontology term, pathway or cell type? |
 | **Notebook cross refs** <br><sub>`notebook_cross_refs`</sub> | Which plasmids, actions and gels does a notebook entry refer to? |
-| **Query database** <br><sub>`query_database`</sub> | Ask one of the ~60 authoritative databases a question and hand its rows downstream |
+| **Query database** <br><sub>`query_database`</sub> | What does this authoritative database return for this query? |
 | **Research run status** <br><sub>`research_run_status`</sub> | What state is a research run in, and what would resuming it do? |
 | **Resume research run** <br><sub>`resume_research_run`</sub> | What verdicts does a research run reach once its failed, deferred and never-attempted hypotheses have run? |
-| **Search literature** <br><sub>`search_literature`</sub> | Search the published literature: PubMed, Europe PMC (including open-access full-text sections), OpenAlex, Crossref, arXiv, bioRxiv/medRxiv preprints or DataCite datasets. |
-| **Search records** <br><sub>`search_records`</sub> | Search the sequence archives by free text (a gene name, a protein, an organism, a phrase) across NCBI Nucleotide and Protein, ENA (plain records, WGS and TSA/TLS assembly sets, and annotated coding/non-coding features… |
+| **Search literature** <br><sub>`search_literature`</sub> | What does the authority named return for this literature search? |
+| **Search records** <br><sub>`search_records`</sub> | Which archive records match this text? |
 
 </details>
 
 <details>
-<summary><b>📊 Sequence analysis</b> · 35 tools</summary>
+<summary><b>📊 Sequence analysis</b> · 36 tools</summary>
 
 _Everything else a bench scientist asks of a sequence._
 
 | Tool | What it answers |
 |---|---|
-| **BLAST project sequences** <br><sub>`blast_project_sequences`</sub> | Search a sequence against your own records with blastn or blastp, on this machine: the local database is built from every project record of the program's alphabet, and every E-value is computed from that database's ow… |
-| **BLAST search** <br><sub>`blast_search`</sub> | Search a sequence against NCBI BLAST+ at EMBL-EBI (blastn, blastp, blastx, tblastn or tblastx) over ENA, UniProtKB, PDB and the vector-screening sets. |
+| **BLAST project sequences** <br><sub>`blast_project_sequences`</sub> | Which of this project's own records carry this span, with what E-values? |
+| **BLAST search** <br><sub>`blast_search`</sub> | Which public sequences resemble this one, with what E-values? |
 | **Check assay decay** <br><sub>`check_assay_decay`</sub> | How often do a published assay's oligos mismatch the genomes circulating now, and where in each oligo do the mismatches sit? |
-| **Check primer specificity** <br><sub>`check_primer_specificity`</sub> | Check primer pairs for products off their template, the way NCBI Primer-BLAST does, and rank them by it: each distinct primer is searched against a sequence database at EMBL-EBI with short-query BLAST, hits are paired… |
+| **Check primer specificity** <br><sub>`check_primer_specificity`</sub> | Do these primer pairs make products off their template, and which pair ranks best by it? |
 | **Check rows** <br><sub>`check_rows`</sub> | Does every row of this table satisfy the rule, and which rows broke it? |
+| **Compare antibodies** <br><sub>`compare_antibodies`</sub> | How do these antibodies' heavy (or light) variable domains differ position by position, and how do their lengths, pI, charge, hydropathy, extinction and CDR charge compare? |
 | **Enzyme cut counts** <br><sub>`enzyme_cut_counts`</sub> | How many times does each enzyme cut this molecule? |
 | **Filter items** <br><sub>`filter_items`</sub> | Which rows of this table meet the condition, and how many were dropped? |
 | **Find ORFs** <br><sub>`find_orfs`</sub> | Which open reading frames does this molecule carry, on both strands? |
-| **Find primer SNPs** <br><sub>`find_primer_snps`</sub> | Find known SNPs under primers, the check NCBI Primer-BLAST makes with "Primer binding site may not contain known SNP". |
+| **Find primer SNPs** <br><sub>`find_primer_snps`</sub> | Which known dbSNP variants sit under these primers, and how far is each from the 3' end? |
 | **Fold RNA** <br><sub>`fold_rna`</sub> | What is the minimum-free-energy secondary structure of this sequence, and its free energy? |
 | **Fragment ions** <br><sub>`fragment_ions`</sub> | Which theoretical fragment ions does this peptide give, at each charge? |
 | **GC content** <br><sub>`gc_content`</sub> | What is this sequence's GC fraction, overall or along a sliding window? |
@@ -529,9 +537,9 @@ _Everything else a bench scientist asks of a sequence._
 | **Isotope envelope** <br><sub>`isotope_envelope`</sub> | What coarse isotope pattern does this peptide or formula show: the heights and masses of M, M+1, M+2 and beyond? |
 | **Isotopic composition** <br><sub>`isotopic_composition`</sub> | Which isotopic composition is this peptide most likely to carry, and how abundant is it? |
 | **Linkage disequilibrium** <br><sub>`linkage_disequilibrium`</sub> | How much linkage disequilibrium is there between each pair of biallelic sites, and which sites survive pruning? |
-| **Load trace** <br><sub>`load_trace`</sub> | Read a Sanger trace (.ab1 / .scf / .ztr) and hand its BASE CALLS onward as a record, with the per-base quality and the trim bounds beside them. |
-| **Mask sequence** <br><sub>`mask_sequence`</sub> | Mask the parts of a sequence a similarity search should not seed on, using BLAST's own three maskers: DUST for compositionally biased DNA (poly-A, simple repeats), SEG for the protein equivalent, and WindowMasker for… |
-| **Match part by sequence** <br><sub>`match_part_by_sequence`</sub> | Identify a stretch of DNA by asking the iGEM Registry which published part carries exactly those bases, and hand back that part's own description, Sequence-Ontology role, literature citation and license. |
+| **Load trace** <br><sub>`load_trace`</sub> | What bases, qualities and trim bounds does this Sanger trace carry? |
+| **Mask sequence** <br><sub>`mask_sequence`</sub> | Which stretches of this sequence should a similarity search not seed on? |
+| **Match part by sequence** <br><sub>`match_part_by_sequence`</sub> | Which published iGEM part carries exactly these bases? |
 | **MIQE checklist** <br><sub>`miqe_checklist`</sub> | Which MIQE 2.0 items does a qPCR paper provide, and where, or why are they omitted? |
 | **Rank reference genes** <br><sub>`rank_reference_genes`</sub> | Which candidate reference genes are most stable on this plate, by geNorm, NormFinder, BestKeeper, comparative delta-Ct and their consensus? |
 | **Read MGF** <br><sub>`read_mgf`</sub> | What spectra does this MGF file hold? |
@@ -544,7 +552,7 @@ _Everything else a bench scientist asks of a sequence._
 | **Scan sigma70 promoters** <br><sub>`scan_sigma70_promoters`</sub> | Which sigma70 promoters does this bacterial sequence carry, and how strong is each by the La Fleur-Hossain-Salis biophysical model? |
 | **Scan splice sites** <br><sub>`scan_splice_sites`</sub> | Which splice donors and acceptors does this sequence spell, by maximum-entropy strength and by typicality against measured Arabidopsis sites? |
 | **Score spectrum** <br><sub>`score_spectrum`</sub> | How well does this MS/MS spectrum match this peptide, by X!Tandem HyperScore? |
-| **Size fragments** <br><sub>`size_fragments`</sub> | Size the peaks of a fragment-analysis run (.fsa / .hid) against its own size standard, and hand them on as lengths in bases. |
+| **Size fragments** <br><sub>`size_fragments`</sub> | What size in bases is each peak of this fragment run, against its own size standard? |
 | **Summarize rows** <br><sub>`summarize_rows`</sub> | What is this table column's summary: its largest, smallest, median, mean or spread, overall or per group? |
 | **Target decoy qvalues** <br><sub>`target_decoy_qvalues`</sub> | What q-value does each peptide-spectrum match get by target-decoy competition, and how many pass a threshold? |
 | **Translate sequence** <br><sub>`translate_sequence`</sub> | What protein does this DNA encode, under the genetic code chosen? |
@@ -558,18 +566,18 @@ _Chain tools into reproducible workflows, export records, keep lab notes._
 
 | Tool | What it answers |
 |---|---|
-| **Build addgene deposit** <br><sub>`build_addgene_deposit`</sub> | Fill Addgene's own deposit spreadsheet from a record: one row per plasmid with its name and sequence, plus your answers for every plasmid (purpose, plasmid type, cloning method, resistance, growth strain and the other… |
-| **Compare constructions** <br><sub>`compare_constructions`</sub> | Align two constructs' build procedures step by step, in order |
-| **Enzyme collection** <br><sub>`enzyme_collection`</sub> | Resolve one of your saved enzyme collections to the enzyme names in it, so a later step can scan, digest or design with 'my Golden Gate set' by name instead of whatever happens to be selected. |
-| **Export construction record** <br><sub>`export_construction_record`</sub> | Write a construct's recorded build out as a document: a methods section, a step spreadsheet, the full decoded record, the molecule carrying its own history as GenBank qualifiers, the whole strategy as an OpenCloning d… |
+| **Build addgene deposit** <br><sub>`build_addgene_deposit`</sub> | Fill Addgene's deposit spreadsheet from this record. |
+| **Compare constructions** <br><sub>`compare_constructions`</sub> | Were these two constructs built the same way, step by step? |
+| **Enzyme collection** <br><sub>`enzyme_collection`</sub> | Which enzymes does this saved collection hold, which can the cut catalog resolve, and how often does each cut the record? |
+| **Export construction record** <br><sub>`export_construction_record`</sub> | Write this construct's recorded build as the document named. |
 | **Export map SVG** <br><sub>`export_map_svg`</sub> | What does this molecule's circular map look like as a publication figure? |
-| **Export trace** <br><sub>`export_trace`</sub> | Write a Sanger read out in any of the eight formats the trace editor's Export section offers, and hand the file back as TEXT in the pipeline rather than as a download. |
-| **Get construction history** <br><sub>`get_construction_history`</sub> | What a construct was BUILT from: the recorded operations, the molecules they consumed, how many rounds deep the build goes, and which of the 5 sources the record came from. |
+| **Export trace** <br><sub>`export_trace`</sub> | Write this read in the format named. |
+| **Get construction history** <br><sub>`get_construction_history`</sub> | What was this construct built from, by which recorded operations? |
 | **List workflow templates** <br><sub>`list_workflow_templates`</sub> | The built-in starter workflows |
 | **Plan rnaseq experiment** <br><sub>`plan_rnaseq_experiment`</sub> | For an RNA-seq experiment testing thousands of genes at a target false discovery rate, how many biological replicates per group are needed, and what power does a given number give? |
-| **Remember lab preference** <br><sub>`remember_lab_preference`</sub> | Remember what this lab uses, so the PCR program, primer design and codon optimization start on it: the polymerase, the primer length and GC windows, and the expression host. |
+| **Remember lab preference** <br><sub>`remember_lab_preference`</sub> | Remember the polymerase, primer window and expression host this lab uses. |
 | **Run workflow** <br><sub>`run_workflow`</sub> | Run a workflow graph: nodes naming tools, wires carrying one node’s output into another’s input, $whenExpression to make a step conditional, and scatter to run a step once per element of a list. |
-| **Save enzyme collection** <br><sub>`save_enzyme_collection`</sub> | Save a set of enzymes as a named collection in your Enzyme Collections panel, so a scan that found the enzymes worth keeping ends by keeping them instead of asking you to retype the list. |
+| **Save enzyme collection** <br><sub>`save_enzyme_collection`</sub> | Save these enzymes as a named collection. |
 | **Validate workflow** <br><sub>`validate_workflow`</sub> | Would this workflow graph run? |
 
 </details>
