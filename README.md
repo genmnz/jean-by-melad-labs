@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->287<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->289<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -466,7 +466,7 @@ _Molecules, conformers, scaffolds, reactions, chemical space and library screeni
 </details>
 
 <details>
-<summary><b>🔬 Expression & hypothesis testing</b> · 11 tools</summary>
+<summary><b>🔬 Expression & hypothesis testing</b> · 13 tools</summary>
 
 _Differential expression, gene-set enrichment and falsification-tested discovery programmes._
 
@@ -479,8 +479,10 @@ _Differential expression, gene-set enrichment and falsification-tested discovery
 | **Discover reference stability** <br><sub>`discover_reference_stability`</sub> | Are candidate reference genes more or less variable across human tissues than genes of the same abundance? |
 | **Discover site avoidance** <br><sub>`discover_site_avoidance`</sub> | Which exact restriction sites does each sequence carry far less, or far more, often than a stated null predicts? |
 | **Discover target validation** <br><sub>`discover_target_validation`</sub> | Does the evidence in a set of gene-level tables support a hypothesis that one gene drives a phenotype, by sequential falsification? |
+| **Gene set camera** <br><sub>`gene_set_camera`</sub> | Competitive gene set test that accounts for inter-gene correlation (camera; Wu & Smyth 2012), as limma 3.68.5 runs it: is a set more differentially expressed than the genes outside it, with the variance of its mean st… |
 | **Gene set enrichment** <br><sub>`gene_set_enrichment`</sub> | Preranked gene set enrichment analysis (GSEA; Subramanian et al. |
 | **Gene set overrepresentation** <br><sub>`gene_set_overrepresentation`</sub> | Over-representation analysis (ORA): which gene sets hold more of a gene list than chance, by the one-sided hypergeometric test against a background, as clusterProfiler's enricher() runs it (enrichit 0.2.6). |
+| **Resolve gene sets** <br><sub>`resolve_gene_sets`</sub> | Which gene sets do GO or Reactome define for this organism right now? |
 | **Run discovery programme** <br><sub>`run_discovery_programme`</sub> | Which pre-registered hypotheses does a program of falsification tests support, with the false discovery rate controlled across all of them? |
 | **Validate gene trait** <br><sub>`validate_gene_trait`</sub> | Does public expression and GWAS evidence support a hypothesis that a gene is involved in a trait, by sequential falsification? |
 
