@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->289<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->292<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -489,7 +489,7 @@ _Differential expression, gene-set enrichment and falsification-tested discovery
 </details>
 
 <details>
-<summary><b>🗄️ Public databases & records</b> · 17 tools</summary>
+<summary><b>🗄️ Public databases & records</b> · 20 tools</summary>
 
 _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the record to any tool._
 
@@ -497,7 +497,10 @@ _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the rec
 |---|---|
 | **Apply feature file** <br><sub>`apply_feature_file`</sub> | Which features from this GTF land on the record, and which do not fit? |
 | **Cancel research run** <br><sub>`cancel_research_run`</sub> | Which pending hypotheses of a research run should never run? |
+| **Fetch article** <br><sub>`fetch_article`</sub> | Give me this paper's open-access full text. |
+| **Fetch ClinVar VCF** <br><sub>`fetch_clinvar_vcf`</sub> | Which ClinVar records does this release VCF hold in this region? |
 | **Fetch record** <br><sub>`fetch_record`</sub> | Give me this accession's record from the archive named. |
+| **Find accessions** <br><sub>`find_accessions`</sub> | Which archive records does this text name? |
 | **History protocol** <br><sub>`history_protocol`</sub> | What numbered bench protocol does a construct's build history describe? |
 | **List databases** <br><sub>`list_databases`</sub> | Which authoritative databases are available, and what does each cover? |
 | **List research runs** <br><sub>`list_research_runs`</sub> | Which research runs are there, and what state is each in? |
@@ -572,7 +575,7 @@ _Chain tools into reproducible workflows, export records, keep lab notes._
 | **Compare constructions** <br><sub>`compare_constructions`</sub> | Were these two constructs built the same way, step by step? |
 | **Enzyme collection** <br><sub>`enzyme_collection`</sub> | Which enzymes does this saved collection hold, which can the cut catalog resolve, and how often does each cut the record? |
 | **Export construction record** <br><sub>`export_construction_record`</sub> | Write this construct's recorded build as the document named. |
-| **Export map SVG** <br><sub>`export_map_svg`</sub> | What does this molecule's circular map look like as a publication figure? |
+| **Export map SVG** <br><sub>`export_map_svg`</sub> | What does this molecule's map look like as a publication figure, circular or linear? |
 | **Export trace** <br><sub>`export_trace`</sub> | Write this read in the format named. |
 | **Get construction history** <br><sub>`get_construction_history`</sub> | What was this construct built from, by which recorded operations? |
 | **List workflow templates** <br><sub>`list_workflow_templates`</sub> | The built-in starter workflows |
