@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->292<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->296<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -199,12 +199,13 @@ _Digests, ligations, Gibson, Golden Gate, Gateway-style recombination, part gram
 </details>
 
 <details>
-<summary><b>🔥 PCR, primers & thermocycling</b> · 11 tools</summary>
+<summary><b>🔥 PCR, primers & thermocycling</b> · 15 tools</summary>
 
 _Primer design for every kind of PCR, melting temperatures and reaction simulation._
 
 | Tool | What it answers |
 |---|---|
+| **Convert mass moles** <br><sub>`convert_mass_moles`</sub> | How many picomoles, or how many copies, is this much of this molecule? |
 | **Design bisulfite primers** <br><sub>`design_bisulfite_primers`</sub> | Which BSP or MSP primers work on the bisulfite-converted strands, and where are the CpG islands? |
 | **Design CODEHOP** <br><sub>`design_codehop`</sub> | Which hybrid degenerate-core primers does a block of aligned protein give, for homologues too diverged for nucleotide design? |
 | **Design degenerate primers** <br><sub>`design_degenerate_primers`</sub> | Which degenerate primers amplify every member of this aligned family, and how much of it does each cover? |
@@ -215,7 +216,10 @@ _Primer design for every kind of PCR, melting temperatures and reaction simulati
 | **Fusion PCR** <br><sub>`fusion_pcr`</sub> | What single product does overlap-extension PCR give from fragments that share terminal homology? |
 | **Multiplex PCR** <br><sub>`multiplex_pcr`</sub> | What does a primer pool do on these templates: products, off-target binding, template-distinguishing pairs, and the dimer matrix? |
 | **PCR amplify** <br><sub>`pcr_amplify`</sub> | What product does this primer pair amplify from the template? |
+| **Plan master mix** <br><sub>`plan_master_mix`</sub> | How much of each reagent goes into a master mix for this many reactions? |
+| **Plan serial dilution** <br><sub>`plan_serial_dilution`</sub> | How do I make a dilution series from this stock? |
 | **Primer check** <br><sub>`primer_check`</sub> | Where does a primer anneal on this molecule, and how well does each site match? |
+| **Solve dilution** <br><sub>`solve_dilution`</sub> | How much stock, diluent or final concentration does a dilution need? |
 
 </details>
 
