@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->296<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->303<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -156,19 +156,21 @@ The full catalogue, regenerated from the live server every day. Open a section t
 
 <!-- TOOLS:START -->
 <details>
-<summary><b>🧬 Cloning & assembly</b> · 33 tools</summary>
+<summary><b>🧬 Cloning & assembly</b> · 36 tools</summary>
 
 _Digests, ligations, Gibson, Golden Gate, Gateway-style recombination, part grammars and assembly planning._
 
 | Tool | What it answers |
 |---|---|
 | **Assemble index oligos** <br><sub>`assemble_index_oligos`</sub> | What oligos does a synthesizer make for these indexes on these adapter arms or primer? |
+| **Assemble multiple inserts** <br><sub>`assemble_multiple_inserts`</sub> | Which construct does this backbone, opened at several sites, make with these inserts placed at once? |
 | **Assemble operon** <br><sub>`assemble_operon`</sub> | What does an operon of these CDSs look like with a fresh RBS in front of each, designed against its real upstream context? |
 | **Assembly plan simulate** <br><sub>`assembly_plan_simulate`</sub> | What final construct does a multi-level assembly plan give, each level's products becoming the next level's parts? |
 | **Build assembly report** <br><sub>`build_assembly_report`</sub> | What does DnaCauldron's assembly report say about this assembly result? |
 | **Check Golden Gate parts** <br><sub>`check_golden_gate_parts`</sub> | Which of each part's Type-IIS sites are the flanking sites the assembly needs and which are internal sites that will mis-cut it? |
 | **Check methylation block** <br><sub>`check_methylation_block`</sub> | Does the host's methylation block these enzymes at each of their sites on this molecule? |
 | **Classify grammar part** <br><sub>`classify_grammar_part`</sub> | Which Golden Braid, MoClo or Yeast ToolKit grammar, position and level does this record represent? |
+| **Design combinatorial library** <br><sub>`design_combinatorial_library`</sub> | Which constructs does this set of part bins make, member by member, and which combinations did a design rule forbid? |
 | **Design fusion site primers** <br><sub>`design_fusion_site_primers`</sub> | Which primers add a Type-IIS site, spacer and chosen overhang to a part on a Tm-matched annealing footprint? |
 | **Design Gibson primers** <br><sub>`design_gibson_primers`</sub> | Which primers amplify each fragment with the 5' overhang that fuses it to its neighbour, Tm-matched within each pair? |
 | **Design multisite primers** <br><sub>`design_multisite_primers`</sub> | Which one-reaction QCLM primers make several mutations at once, with codons from an organism's usage table? |
@@ -186,6 +188,7 @@ _Digests, ligations, Gibson, Golden Gate, Gateway-style recombination, part gram
 | **Gibson assemble** <br><sub>`gibson_assemble`</sub> | What construct do these fragments make when they are joined by their terminal homology (Gibson, NEBuilder, In-Fusion)? |
 | **Golden Gate assemble** <br><sub>`golden_gate_assemble`</sub> | What construct do these parts make in a Type-IIS (Golden Gate, MoClo) reaction? |
 | **Ligate fragments** <br><sub>`ligate_fragments`</sub> | What products do these fragments make when their ends are ligated (after any per-fragment digest)? |
+| **Ligation independent clone** <br><sub>`ligation_independent_clone`</sub> | What does this set of fragments give under LIC, SLIC, In-Fusion, CPEC or USER, and is the homology arm one the method's own authority stands behind? |
 | **Plan thermocycler program** <br><sub>`plan_thermocycler_program`</sub> | What cycling program does this amplicon need on this polymerase, by its manufacturer's protocol? |
 | **Protein digest** <br><sub>`protein_digest`</sub> | Which peptides, masses and m/z values does a proteolytic digest of this protein give? |
 | **Rank strategies** <br><sub>`rank_strategies`</sub> | Which assembly chemistries can build a construct from these parts, and what does each cost and risk? |
@@ -303,7 +306,7 @@ _Amplification and melt curves, RDML runs, droplet gating, uncertainty and relat
 </details>
 
 <details>
-<summary><b>🎛️ Design & expression</b> · 38 tools</summary>
+<summary><b>🎛️ Design & expression</b> · 39 tools</summary>
 
 _Codon optimisation, RBS and operons, probes, barcodes, genetic circuits and annotation._
 
@@ -328,6 +331,7 @@ _Codon optimisation, RBS and operons, probes, barcodes, genetic circuits and ann
 | **Codon usage distance** <br><sub>`codon_usage_distance`</sub> | How far is this region's codon usage from the record's other genes (CUFS)? |
 | **Design barcodes** <br><sub>`design_barcodes`</sub> | Which index set of this size has a guaranteed minimum distance, and what does it actually correct? |
 | **Design FREE codes** <br><sub>`design_free_codes`</sub> | Which barcodes of this length correct this many insertions, deletions and substitutions? |
+| **Design gene fragment order** <br><sub>`design_gene_fragment_order`</sub> | What sheet does IDT's gene-fragment plate upload take for these fragments, and which of them can the product not be ordered as? |
 | **Design genetic circuit** <br><sub>`design_genetic_circuit`</sub> | Which characterised repressor gates compute this logic function, with what ON/OFF dynamic range, and what DNA does the circuit need? |
 | **Design HCR probes** <br><sub>`design_hcr_probes`</sub> | Which HCR v3.0 split-initiator probe pairs tile this target within their composition and free-energy windows? |
 | **Design ish probes** <br><sub>`design_ish_probes`</sub> | Which oligo set images this target best: tiled candidates meeting Tm, GC and composition, screened for off-target binding and abundant k-mers, and gathered into a set? |
@@ -351,7 +355,7 @@ _Codon optimisation, RBS and operons, probes, barcodes, genetic circuits and ann
 </details>
 
 <details>
-<summary><b>🌳 Alignment & phylogenetics</b> · 17 tools</summary>
+<summary><b>🌳 Alignment & phylogenetics</b> · 19 tools</summary>
 
 _Pairwise and multiple alignment, dot plots, model selection, trees and tree comparison._
 
@@ -360,6 +364,8 @@ _Pairwise and multiple alignment, dot plots, model selection, trees and tree com
 | **Align read** <br><sub>`align_read`</sub> | How does one sequencing read align to the reference, as two gapped rows? |
 | **Align sequences** <br><sub>`align_sequences`</sub> | How do these sequences line up column by column, by partial-order alignment (a pile of reads over one locus) or progressive alignment (a family of homologous genes)? |
 | **Alignment agreement** <br><sub>`alignment_agreement`</sub> | How well do the reads in this window agree with the reference beneath them? |
+| **Alignment PCA** <br><sub>`alignment_pca`</sub> | How do the rows of this alignment group, on the principal axes of their pairwise similarity? |
+| **Alignment redundancy** <br><sub>`alignment_redundancy`</sub> | Which rows of this alignment are near-copies of a longer row, at what identity? |
 | **Alignment window** <br><sub>`alignment_window`</sub> | Which reads, what depth and what pairing does this window of the BAM or SAM hold? |
 | **Build tree** <br><sub>`build_tree`</sub> | What phylogeny do these aligned sequences support, under a distance, parsimony, maximum-likelihood or Bayesian method, with branch support? |
 | **Compare trees** <br><sub>`compare_trees`</sub> | How far apart are these trees over the same taxa, and what topology do they share? |
@@ -378,7 +384,7 @@ _Pairwise and multiple alignment, dot plots, model selection, trees and tree com
 </details>
 
 <details>
-<summary><b>🧫 Genomics, variants & copy number</b> · 20 tools</summary>
+<summary><b>🧫 Genomics, variants & copy number</b> · 21 tools</summary>
 
 _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 
@@ -404,6 +410,7 @@ _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 | **Read variant calls** <br><sub>`read_variant_calls`</sub> | Which records of this VCF or BCF match this query? |
 | **Score variant effect** <br><sub>`score_variant_effect`</sub> | How much less (or more) likely does ESM-2 find each substitution than the wild-type residue? |
 | **Variant call summary** <br><sub>`variant_call_summary`</sub> | What does bcftools stats say about this call set? |
+| **Variant consequences** <br><sub>`variant_consequences`</sub> | What does each call in this VCF do to the transcripts of its reference? |
 
 </details>
 
