@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->303<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->304<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -576,7 +576,7 @@ _Everything else a bench scientist asks of a sequence._
 </details>
 
 <details>
-<summary><b>🔗 Pipelines & lab records</b> · 13 tools</summary>
+<summary><b>🔗 Pipelines & lab records</b> · 14 tools</summary>
 
 _Chain tools into reproducible workflows, export records, keep lab notes._
 
@@ -591,6 +591,7 @@ _Chain tools into reproducible workflows, export records, keep lab notes._
 | **Get construction history** <br><sub>`get_construction_history`</sub> | What was this construct built from, by which recorded operations? |
 | **List workflow templates** <br><sub>`list_workflow_templates`</sub> | The built-in starter workflows |
 | **Plan rnaseq experiment** <br><sub>`plan_rnaseq_experiment`</sub> | For an RNA-seq experiment testing thousands of genes at a target false discovery rate, how many biological replicates per group are needed, and what power does a given number give? |
+| **Read answer window** <br><sub>`read_answer_window`</sub> | Read one window of an answer that came back cut to the size budget: the tool, the same arguments, the field its notice named, and which items or characters to return. |
 | **Remember lab preference** <br><sub>`remember_lab_preference`</sub> | Remember the polymerase, primer window and expression host this lab uses. |
 | **Run workflow** <br><sub>`run_workflow`</sub> | Run a workflow graph: nodes naming tools, wires carrying one node’s output into another’s input, $whenExpression to make a step conditional, and scatter to run a step once per element of a list. |
 | **Save enzyme collection** <br><sub>`save_enzyme_collection`</sub> | Save these enzymes as a named collection. |
