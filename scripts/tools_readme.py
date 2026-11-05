@@ -51,6 +51,8 @@ RULES = [
 ]
 
 SKIP_CAPABILITIES = {"workspace"}  # editor-state tools: meaningful inside the workbench only
+# The server's index of its own listing (the full text of each brief description), not a tool.
+SKIP_NAMES = {"describe_tools"}
 
 
 def fetch_tools():
@@ -95,7 +97,7 @@ def section_of(tool):
 def render(tools):
     groups = defaultdict(list)
     for t in tools:
-        if t.get("_meta", {}).get("bio.jane/capability") in SKIP_CAPABILITIES:
+        if t["name"] in SKIP_NAMES or t.get("_meta", {}).get("bio.jane/capability") in SKIP_CAPABILITIES:
             continue
         groups[section_of(t)].append(t)
     shown = sum(len(v) for v in groups.values())
