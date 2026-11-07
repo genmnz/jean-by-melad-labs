@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->304<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->312<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -156,7 +156,7 @@ The full catalogue, regenerated from the live server every day. Open a section t
 
 <!-- TOOLS:START -->
 <details>
-<summary><b>🧬 Cloning & assembly</b> · 36 tools</summary>
+<summary><b>🧬 Cloning & assembly</b> · 37 tools</summary>
 
 _Digests, ligations, Gibson, Golden Gate, Gateway-style recombination, part grammars and assembly planning._
 
@@ -173,6 +173,7 @@ _Digests, ligations, Gibson, Golden Gate, Gateway-style recombination, part gram
 | **Design combinatorial library** <br><sub>`design_combinatorial_library`</sub> | Which constructs does this set of part bins make, member by member, and which combinations did a design rule forbid? |
 | **Design fusion site primers** <br><sub>`design_fusion_site_primers`</sub> | Which primers add a Type-IIS site, spacer and chosen overhang to a part on a Tm-matched annealing footprint? |
 | **Design Gibson primers** <br><sub>`design_gibson_primers`</sub> | Which primers amplify each fragment with the 5' overhang that fuses it to its neighbour, Tm-matched within each pair? |
+| **Design ligation independent primers** <br><sub>`design_ligation_independent_primers`</sub> | Which primers amplify each fragment with the arm that makes a junction this method's chemistry can close, and is that arm one its own authority stands behind? |
 | **Design multisite primers** <br><sub>`design_multisite_primers`</sub> | Which one-reaction QCLM primers make several mutations at once, with codons from an organism's usage table? |
 | **Design mutagenesis primers** <br><sub>`design_mutagenesis_primers`</sub> | Which primers introduce this point change in a CDS by SOE-PCR or QuikChange? |
 | **Design overhang set** <br><sub>`design_overhang_set`</sub> | Which overhang set of a given size ligates with high fidelity by measured data, keeping any junctions that cannot change? |
@@ -384,7 +385,7 @@ _Pairwise and multiple alignment, dot plots, model selection, trees and tree com
 </details>
 
 <details>
-<summary><b>🧫 Genomics, variants & copy number</b> · 21 tools</summary>
+<summary><b>🧫 Genomics, variants & copy number</b> · 22 tools</summary>
 
 _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 
@@ -393,6 +394,7 @@ _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 | **Apply variant call** <br><sub>`apply_variant_call`</sub> | What sequence results from substituting this called ALT allele? |
 | **Browse region** <br><sub>`browse_region`</sub> | What does this window of the genome hold: bands, transcripts and nuclease sites? |
 | **Check invariants** <br><sub>`check_invariants`</sub> | Is this designed sequence admissible: protein unchanged, forbidden sites absent, frame intact, length, GC and CAI within bounds? |
+| **Compare flow cytometry populations** <br><sub>`compare_flow_cytometry_populations`</sub> | Does this channel differ between these two populations, and by which test? |
 | **Copy number allele split** <br><sub>`copy_number_allele_split`</sub> | What major and minor allele copy number does each segment carry? |
 | **Copy number compare** <br><sub>`copy_number_compare`</sub> | Which copy-number events do two samples share, and which only one carries? |
 | **Copy number findings** <br><sub>`copy_number_findings`</sub> | Which gains, losses and runs of homozygosity did the file's producer call? |
@@ -530,22 +532,28 @@ _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the rec
 </details>
 
 <details>
-<summary><b>📊 Sequence analysis</b> · 36 tools</summary>
+<summary><b>📊 Sequence analysis</b> · 42 tools</summary>
 
 _Everything else a bench scientist asks of a sequence._
 
 | Tool | What it answers |
 |---|---|
+| **Analyze flow cytometry** <br><sub>`analyze_flow_cytometry`</sub> | How many events fall in each gated population of this FCS file, and what are their per-channel intensities? |
+| **Auto Gate flow cytometry** <br><sub>`auto_gate_flow_cytometry`</sub> | Where would openCyto place its automated gates on these two channels, and how many events fall on each side? |
 | **BLAST project sequences** <br><sub>`blast_project_sequences`</sub> | Which of this project's own records carry this span, with what E-values? |
 | **BLAST search** <br><sub>`blast_search`</sub> | Which public sequences resemble this one, with what E-values? |
 | **Check assay decay** <br><sub>`check_assay_decay`</sub> | How often do a published assay's oligos mismatch the genomes circulating now, and where in each oligo do the mismatches sit? |
+| **Check flow cytometry quality** <br><sub>`check_flow_cytometry_quality`</sub> | Which stretches of this acquisition were unstable, and which events should be removed? |
 | **Check primer specificity** <br><sub>`check_primer_specificity`</sub> | Do these primer pairs make products off their template, and which pair ranks best by it? |
 | **Check rows** <br><sub>`check_rows`</sub> | Does every row of this table satisfy the rule, and which rows broke it? |
+| **Cluster flow cytometry flowsom** <br><sub>`cluster_flow_cytometry_flowsom`</sub> | Which cell populations does FlowSOM find in this file, and how large is each? |
 | **Compare antibodies** <br><sub>`compare_antibodies`</sub> | How do these antibodies' heavy (or light) variable domains differ position by position, and how do their lengths, pI, charge, hydropathy, extinction and CDR charge compare? |
 | **Enzyme cut counts** <br><sub>`enzyme_cut_counts`</sub> | How many times does each enzyme cut this molecule? |
+| **Estimate spillover from controls** <br><sub>`estimate_spillover_from_controls`</sub> | What spillover matrix do these compensation controls imply? |
 | **Filter items** <br><sub>`filter_items`</sub> | Which rows of this table meet the condition, and how many were dropped? |
 | **Find ORFs** <br><sub>`find_orfs`</sub> | Which open reading frames does this molecule carry, on both strands? |
 | **Find primer SNPs** <br><sub>`find_primer_snps`</sub> | Which known dbSNP variants sit under these primers, and how far is each from the 3' end? |
+| **Flow cytometry kinetics** <br><sub>`flow_cytometry_kinetics`</sub> | How does this channel change over the acquisition, and what are its peak, slope and area in each time range? |
 | **Fold RNA** <br><sub>`fold_rna`</sub> | What is the minimum-free-energy secondary structure of this sequence, and its free energy? |
 | **Fragment ions** <br><sub>`fragment_ions`</sub> | Which theoretical fragment ions does this peptide give, at each charge? |
 | **GC content** <br><sub>`gc_content`</sub> | What is this sequence's GC fraction, overall or along a sliding window? |
