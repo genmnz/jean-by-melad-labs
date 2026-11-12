@@ -546,7 +546,7 @@ _Everything else a bench scientist asks of a sequence._
 | **Check flow cytometry quality** <br><sub>`check_flow_cytometry_quality`</sub> | Which stretches of this acquisition were unstable, and which events should be removed? |
 | **Check primer specificity** <br><sub>`check_primer_specificity`</sub> | Do these primer pairs make products off their template, and which pair ranks best by it? |
 | **Check rows** <br><sub>`check_rows`</sub> | Does every row of this table satisfy the rule, and which rows broke it? |
-| **Cluster flow cytometry flowsom** <br><sub>`cluster_flow_cytometry_flowsom`</sub> | Which cell populations does FlowSOM find in this file, and how large is each? |
+| **Cluster flow cytometry FlowSOM** <br><sub>`cluster_flow_cytometry_flowsom`</sub> | Which cell populations does FlowSOM find in this file, and how large is each? |
 | **Compare antibodies** <br><sub>`compare_antibodies`</sub> | How do these antibodies' heavy (or light) variable domains differ position by position, and how do their lengths, pI, charge, hydropathy, extinction and CDR charge compare? |
 | **Enzyme cut counts** <br><sub>`enzyme_cut_counts`</sub> | How many times does each enzyme cut this molecule? |
 | **Estimate spillover from controls** <br><sub>`estimate_spillover_from_controls`</sub> | What spillover matrix do these compensation controls imply? |
