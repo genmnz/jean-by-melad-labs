@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->312<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->313<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -356,12 +356,13 @@ _Codon optimisation, RBS and operons, probes, barcodes, genetic circuits and ann
 </details>
 
 <details>
-<summary><b>🌳 Alignment & phylogenetics</b> · 19 tools</summary>
+<summary><b>🌳 Alignment & phylogenetics</b> · 20 tools</summary>
 
 _Pairwise and multiple alignment, dot plots, model selection, trees and tree comparison._
 
 | Tool | What it answers |
 |---|---|
+| **Align pair** <br><sub>`align_pair`</sub> | How do these two sequences line up on their own, end to end or over their best-matching stretch? |
 | **Align read** <br><sub>`align_read`</sub> | How does one sequencing read align to the reference, as two gapped rows? |
 | **Align sequences** <br><sub>`align_sequences`</sub> | How do these sequences line up column by column, by partial-order alignment (a pile of reads over one locus) or progressive alignment (a family of homologous genes)? |
 | **Alignment agreement** <br><sub>`alignment_agreement`</sub> | How well do the reads in this window agree with the reference beneath them? |
