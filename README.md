@@ -6,7 +6,7 @@
 
 ### The bioinformatics & biotech suite, callable by any AI assistant
 
-**<!-- COUNT:START -->313<!-- COUNT:END --> scientific tools · one URL · no key · free**
+**<!-- COUNT:START -->325<!-- COUNT:END --> scientific tools · one URL · no key · free**
 
 **Design** the construct · **Simulate** the bench step · **Analyze** what comes back · **Verify** the result
 
@@ -307,7 +307,7 @@ _Amplification and melt curves, RDML runs, droplet gating, uncertainty and relat
 </details>
 
 <details>
-<summary><b>🎛️ Design & expression</b> · 39 tools</summary>
+<summary><b>🎛️ Design & expression</b> · 40 tools</summary>
 
 _Codon optimisation, RBS and operons, probes, barcodes, genetic circuits and annotation._
 
@@ -330,10 +330,11 @@ _Codon optimisation, RBS and operons, probes, barcodes, genetic circuits and ann
 | **Codon table fetch** <br><sub>`codon_table_fetch`</sub> | What is this organism's codon usage, counted from its annotated CDS or as a published table? |
 | **Codon usage analysis** <br><sub>`codon_usage_analysis`</sub> | How does this CDS's codon usage compare with an organism's: CAI, GC, rare codons, and the two reference-free bias measures? |
 | **Codon usage distance** <br><sub>`codon_usage_distance`</sub> | How far is this region's codon usage from the record's other genes (CUFS)? |
+| **Debarcode mass cytometry** <br><sub>`debarcode_mass_cytometry`</sub> | Which barcoded sample does each event of a pooled mass cytometry acquisition belong to? |
 | **Design barcodes** <br><sub>`design_barcodes`</sub> | Which index set of this size has a guaranteed minimum distance, and what does it actually correct? |
 | **Design FREE codes** <br><sub>`design_free_codes`</sub> | Which barcodes of this length correct this many insertions, deletions and substitutions? |
 | **Design gene fragment order** <br><sub>`design_gene_fragment_order`</sub> | What sheet does IDT's gene-fragment plate upload take for these fragments, and which of them can the product not be ordered as? |
-| **Design genetic circuit** <br><sub>`design_genetic_circuit`</sub> | Which characterised repressor gates compute this logic function, with what ON/OFF dynamic range, and what DNA does the circuit need? |
+| **Design genetic circuit** <br><sub>`design_genetic_circuit`</sub> | Which characterised repressor gates compute this logic function — given as a named gate, a truth table or a Verilog module — with what ON/OFF dynamic range, and what DNA does the circuit need? |
 | **Design HCR probes** <br><sub>`design_hcr_probes`</sub> | Which HCR v3.0 split-initiator probe pairs tile this target within their composition and free-energy windows? |
 | **Design ish probes** <br><sub>`design_ish_probes`</sub> | Which oligo set images this target best: tiled candidates meeting Tm, GC and composition, screened for off-target binding and abundant k-mers, and gathered into a set? |
 | **Design knockout package** <br><sub>`design_knockout_package`</sub> | What does a complete knockout or knock-in build need: guides, an off-target census, a repair template with arms, screening primers outside the arms, the protocol, and what to buy? |
@@ -386,7 +387,7 @@ _Pairwise and multiple alignment, dot plots, model selection, trees and tree com
 </details>
 
 <details>
-<summary><b>🧫 Genomics, variants & copy number</b> · 22 tools</summary>
+<summary><b>🧫 Genomics, variants & copy number</b> · 23 tools</summary>
 
 _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 
@@ -406,6 +407,7 @@ _Variant calls, copy-number segmentation, LOH and mosaicism, genome regions._
 | **Copy number segment** <br><sub>`copy_number_segment`</sub> | Where are the breakpoints in this chromosome's copy-number signal, by each method named? |
 | **Copy number somatic** <br><sub>`copy_number_somatic`</sub> | What somatic-mutation calls does this array result carry? |
 | **Design expression variants** <br><sub>`design_expression_variants`</sub> | Which codon-optimised variants of this CDS does an expression trial need, and how do they differ? |
+| **Export flow cytometry population** <br><sub>`export_flow_cytometry_population`</sub> | Give me this population's events as a file another tool can open. |
 | **Lookup variant** <br><sub>`lookup_variant`</sub> | What does the authority named return for this variant? |
 | **Population ancestry** <br><sub>`population_ancestry`</sub> | What mixture of K ancestral populations does each sample look like, and which K does cross-entropy prefer? |
 | **Population Fst** <br><sub>`population_fst`</sub> | How differentiated are these populations, per site and averaged, with a jackknife standard error? |
@@ -480,13 +482,14 @@ _Molecules, conformers, scaffolds, reactions, chemical space and library screeni
 </details>
 
 <details>
-<summary><b>🔬 Expression & hypothesis testing</b> · 13 tools</summary>
+<summary><b>🔬 Expression & hypothesis testing</b> · 14 tools</summary>
 
 _Differential expression, gene-set enrichment and falsification-tested discovery programmes._
 
 | Tool | What it answers |
 |---|---|
 | **Describe discovery corpus** <br><sub>`describe_discovery_corpus`</sub> | What does a discovery corpus hold, before any test is run on it? |
+| **Differential abundance flow cytometry** <br><sub>`differential_abundance_flow_cytometry`</sub> | Which cell populations change in abundance between two groups of samples? |
 | **Differential expression** <br><sub>`differential_expression`</sub> | Differential expression from raw RNA-seq read counts, by one of the three standard count models. |
 | **Discover flag rates** <br><sub>`discover_flag_rates`</sub> | How often does a corpus of maps carry a cryptic promoter, splice site or synthesis-breaking repeat more extreme than chance? |
 | **Discover reference concordance** <br><sub>`discover_reference_concordance`</sub> | Does a reference-gene stability ranking hold across conditions, and which candidates rank well everywhere? |
@@ -503,7 +506,7 @@ _Differential expression, gene-set enrichment and falsification-tested discovery
 </details>
 
 <details>
-<summary><b>🗄️ Public databases & records</b> · 20 tools</summary>
+<summary><b>🗄️ Public databases & records</b> · 21 tools</summary>
 
 _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the record to any tool._
 
@@ -511,6 +514,7 @@ _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the rec
 |---|---|
 | **Apply feature file** <br><sub>`apply_feature_file`</sub> | Which features from this GTF land on the record, and which do not fit? |
 | **Cancel research run** <br><sub>`cancel_research_run`</sub> | Which pending hypotheses of a research run should never run? |
+| **Confirm literature hit** <br><sub>`confirm_literature_hit`</sub> | Has a paper someone read already reported this supported hypothesis? |
 | **Fetch article** <br><sub>`fetch_article`</sub> | Give me this paper's open-access full text. |
 | **Fetch ClinVar VCF** <br><sub>`fetch_clinvar_vcf`</sub> | Which ClinVar records does this release VCF hold in this region? |
 | **Fetch record** <br><sub>`fetch_record`</sub> | Give me this accession's record from the archive named. |
@@ -533,16 +537,19 @@ _Search and fetch from NCBI, EMBL-EBI, UCSC, UniProt and more, then hand the rec
 </details>
 
 <details>
-<summary><b>📊 Sequence analysis</b> · 42 tools</summary>
+<summary><b>📊 Sequence analysis</b> · 50 tools</summary>
 
 _Everything else a bench scientist asks of a sequence._
 
 | Tool | What it answers |
 |---|---|
 | **Analyze flow cytometry** <br><sub>`analyze_flow_cytometry`</sub> | How many events fall in each gated population of this FCS file, and what are their per-channel intensities? |
+| **Analyze flow cytometry ploidy** <br><sub>`analyze_flow_cytometry_ploidy`</sub> | What are the cell-cycle phases and DNA content in this DNA-stained sample? |
 | **Auto Gate flow cytometry** <br><sub>`auto_gate_flow_cytometry`</sub> | Where would openCyto place its automated gates on these two channels, and how many events fall on each side? |
+| **Batch flow cytometry** <br><sub>`batch_flow_cytometry`</sub> | How does each population change across samples, and between groups of samples? |
 | **BLAST project sequences** <br><sub>`blast_project_sequences`</sub> | Which of this project's own records carry this span, with what E-values? |
 | **BLAST search** <br><sub>`blast_search`</sub> | Which public sequences resemble this one, with what E-values? |
+| **Calibrate flow cytometry beads** <br><sub>`calibrate_flow_cytometry_beads`</sub> | Which bead population is each event, and how does each channel map to MEF? |
 | **Check assay decay** <br><sub>`check_assay_decay`</sub> | How often do a published assay's oligos mismatch the genomes circulating now, and where in each oligo do the mismatches sit? |
 | **Check flow cytometry quality** <br><sub>`check_flow_cytometry_quality`</sub> | Which stretches of this acquisition were unstable, and which events should be removed? |
 | **Check primer specificity** <br><sub>`check_primer_specificity`</sub> | Do these primer pairs make products off their template, and which pair ranks best by it? |
@@ -550,10 +557,14 @@ _Everything else a bench scientist asks of a sequence._
 | **Cluster flow cytometry FlowSOM** <br><sub>`cluster_flow_cytometry_flowsom`</sub> | Which cell populations does FlowSOM find in this file, and how large is each? |
 | **Compare antibodies** <br><sub>`compare_antibodies`</sub> | How do these antibodies' heavy (or light) variable domains differ position by position, and how do their lengths, pI, charge, hydropathy, extinction and CDR charge compare? |
 | **Enzyme cut counts** <br><sub>`enzyme_cut_counts`</sub> | How many times does each enzyme cut this molecule? |
+| **Estimate flow cytometry scale** <br><sub>`estimate_flow_cytometry_scale`</sub> | Which transform parameters does this data itself support? |
+| **Estimate spectra from controls** <br><sub>`estimate_spectra_from_controls`</sub> | What spectral signatures do these single-stain controls imply? |
 | **Estimate spillover from controls** <br><sub>`estimate_spillover_from_controls`</sub> | What spillover matrix do these compensation controls imply? |
 | **Filter items** <br><sub>`filter_items`</sub> | Which rows of this table meet the condition, and how many were dropped? |
 | **Find ORFs** <br><sub>`find_orfs`</sub> | Which open reading frames does this molecule carry, on both strands? |
 | **Find primer SNPs** <br><sub>`find_primer_snps`</sub> | Which known dbSNP variants sit under these primers, and how far is each from the 3' end? |
+| **Fit flow cytometry COMPASS** <br><sub>`fit_flow_cytometry_compass`</sub> | Which cytokine combinations respond to stimulation in each subject, and how polyfunctional is the response? |
+| **Fit flow cytometry proliferation** <br><sub>`fit_flow_cytometry_proliferation`</sub> | How many divisions have these dye-labelled cells gone through, and what share sits in each generation? |
 | **Flow cytometry kinetics** <br><sub>`flow_cytometry_kinetics`</sub> | How does this channel change over the acquisition, and what are its peak, slope and area in each time range? |
 | **Fold RNA** <br><sub>`fold_rna`</sub> | What is the minimum-free-energy secondary structure of this sequence, and its free energy? |
 | **Fragment ions** <br><sub>`fragment_ions`</sub> | Which theoretical fragment ions does this peptide give, at each charge? |
@@ -579,6 +590,7 @@ _Everything else a bench scientist asks of a sequence._
 | **Score spectrum** <br><sub>`score_spectrum`</sub> | How well does this MS/MS spectrum match this peptide, by X!Tandem HyperScore? |
 | **Size fragments** <br><sub>`size_fragments`</sub> | What size in bases is each peak of this fragment run, against its own size standard? |
 | **Summarize rows** <br><sub>`summarize_rows`</sub> | What is this table column's summary: its largest, smallest, median, mean or spread, overall or per group? |
+| **Synthesize flow cytometry** <br><sub>`synthesize_flow_cytometry`</sub> | What does this file support, read before any question is asked? |
 | **Target decoy qvalues** <br><sub>`target_decoy_qvalues`</sub> | What q-value does each peptide-spectrum match get by target-decoy competition, and how many pass a threshold? |
 | **Translate sequence** <br><sub>`translate_sequence`</sub> | What protein does this DNA encode, under the genetic code chosen? |
 
